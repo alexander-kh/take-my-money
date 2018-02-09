@@ -7,4 +7,8 @@ class Ticket < ApplicationRecord
   
   enum status: {unsold: 0, waiting: 1}
   enum access: {general: 0}
+  
+  def place_in_cart_for(user)
+    update(status: :waiting, user: user)
+  end
 end
