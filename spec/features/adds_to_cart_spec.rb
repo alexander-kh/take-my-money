@@ -22,7 +22,7 @@ RSpec.describe "adding to cart" do
     create_tickets_for(next_performance)
   end
   
-  it "can add tickets to a cart" do
+  it "adds tickets to a cart" do
     visit event_path(play)
     within("#performance_#{first_performance.id}") do
       select("2", from: "ticket_count")
