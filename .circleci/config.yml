@@ -1,0 +1,50 @@
+version: 2
+jobs:
+  build:
+    docker:
+       - image: circleci/ruby:2.5.0-node-browsers
+         environment:
+         - RAILS_ENV: test
+         - PGHOST: 127.0.0.1
+         - PGUSER: alex
+       
+       - image: circleci/postgres:10.1
+         environment:
+           POSTGRES_USER: alex
+           POSTGRES_DB: snow_globe_test
+
+    working_directory: ~/snow_globe_theater
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      
+      - run: sudo apt install postgresql-client
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: database setup
+          command: |
+            bundle exec rake db:create
+            bundle exec rake db:schema:load
+
+      - run:
+          name: run tests
+          command: |
+            bundle exec rspec --format progress
+      
+      - store_test_results:
+          path: /tmp/test-results

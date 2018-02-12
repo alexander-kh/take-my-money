@@ -1,24 +1,41 @@
-# README
+### Take My Money: Accepting Payments on the Web 
+##### by Noel Rappin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The code from "Take My Money" book, published by the Pragmatic Bookshelf.
+Copyrights apply to this code. It may not be used to create training material, courses, books, articles, and the like. Contact the publisher if you are in doubt.
+Visit http://www.pragmaticprogrammer.com/titles/nrwebpay for more book information.
 
-Things you may want to cover:
+In process: completed chapter 1/13
 
-* Ruby version
+**Versions used:**
 
-* System dependencies
+  * Ruby: 2.5.0
+  * Rails: 5.1.4
+  * PostgreSQL: 10.1
+  * RSpec: 3.7
 
-* Configuration
+**Configuration:**
 
-* Database creation
+  * Create database:
+  ```
+  bundle exec rails db:create
+  ```
+  * Run migrations:
+  ```
+  bundle exec rails db:migrate
+  ```
+  * Install ruby gems:
+  ```
+  bundle install
+  ```
+  
+**Testing:**
 
-* Database initialization
+  * Using RSpec testing library:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    * unit tests
+    
+    * integration tests using Capybara
+    ```
+    bundle exec rspec
+    ````
