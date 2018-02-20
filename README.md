@@ -5,7 +5,7 @@ The code from "Take My Money" book, published by the Pragmatic Bookshelf.
 Copyrights apply to this code. It may not be used to create training material, courses, books, articles, and the like. Contact the publisher if you are in doubt.
 Visit http://www.pragmaticprogrammer.com/titles/nrwebpay for more book information.
 
-In process: completed chapter 1/13
+In process: completed chapters 2/13
 
 **Versions used:**
 
