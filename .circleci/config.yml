@@ -28,18 +28,19 @@ jobs:
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
       
-      - run: sudo apt install postgresql-client
-
       - save_cache:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       - run:
+          name: wait for db
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      
+      - run:
           name: database setup
           command: |
-            bundle exec rake db:create
-            bundle exec rake db:schema:load
+            bundle exec rails db:schema:load --trace
 
       - run:
           name: run tests
