@@ -8,7 +8,13 @@ html(lang="en")
       content="#{content_for?(:description) ? yield(:description) : "Globe"}")
     = stylesheet_link_tag("application",
       media: "all", "data-turbolinks-track" => true)
+    = javascript_include_tag("#{STRIPE_JS_HOST}/v2/#{STRIPE_JS_FILE}")
     = javascript_include_tag("application", "data-turbolinks-track" => true)
+    
+    javascript:
+      Stripe.setPublishableKey(
+        "#{Rails.application.secrets.stripe_publishable_key}");
+    
     = csrf_meta_tags
   
   body
