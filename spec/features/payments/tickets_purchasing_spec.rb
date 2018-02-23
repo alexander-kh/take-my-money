@@ -1,6 +1,7 @@
 require 'rails_helper'
+require 'fake_stripe'
 
-RSpec.describe "tickets purchasing", :vcr do
+RSpec.describe "tickets purchasing", :js do
   let(:buyer) { create(:user) }
   let(:performance) { create(:performance, event: create(:event)) }
   
@@ -8,6 +9,15 @@ RSpec.describe "tickets purchasing", :vcr do
     status: "unsold", price: Money.new(1500))}
   let(:ticket_2) { create(:ticket, performance: performance,
     status: "unsold", price: Money.new(1500))}
+  
+  before(:each) do
+    FakeStripe.stub_stripe
+  end
+  
+  after(:each) do
+    WebMock.reset!
+    Stripe.api_key = Rails.application.secrets.stripe_secret_key
+  end
     
   before(:example) do
     sign_in(buyer.email, buyer.password)

@@ -41,6 +41,8 @@ gem 'devise'
 gem 'money-rails', '~> 1'
 gem 'dotenv-rails'
 gem 'stripe'
+gem 'babel-transpiler'
+gem 'sprockets', github: 'rails/sprockets'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -64,6 +66,9 @@ group :test do
   gem 'database_cleaner'
   gem 'vcr'
   gem 'webmock'
+  gem 'poltergeist'
+  gem 'fake_stripe'
+  gem 'launchy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
