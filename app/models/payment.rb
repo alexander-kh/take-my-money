@@ -9,7 +9,7 @@ class Payment < ApplicationRecord
   
   monetize :price_cents
   
-  enum status: [:created, :succeeded]
+  enum status: {created: 0, succeeded: 1, pending: 2}
   
   def create_line_items(tickets)
     tickets.each do |ticket|

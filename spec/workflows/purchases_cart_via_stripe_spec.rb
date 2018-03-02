@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PurchasesCart do
+RSpec.describe PurchasesCartViaStripe, :vcr, :aggregate_failures do
 
   describe "successful credit card payment", :vcr do
     let(:reference) { Payment.generate_reference }
@@ -14,7 +14,7 @@ RSpec.describe PurchasesCart do
     let(:token) { StripeToken.new(
       credit_card_number: "4242424242424242", expiration_month: "12",
       expiration_year: Time.zone.now.year + 1, cvc: "123") }
-    let(:workflow) { PurchasesCart.new(
+    let(:workflow) { PurchasesCartViaStripe.new(
       user: user, purchase_amount_cents: 3000, stripe_token: token) }
     let(:attributes) { {user_id: user.id, price_cents: 3000,
       reference: a_truthy_value, payment_method: "stripe", status: "created"} }

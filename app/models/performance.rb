@@ -5,4 +5,8 @@ class Performance < ApplicationRecord
   def unsold_tickets(count)
     tickets.where(status: "unsold").limit(count)
   end
+  
+  def name
+    "#{event.name} #{start_time.to_s(:short)}"
+  end
 end
