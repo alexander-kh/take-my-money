@@ -28,8 +28,7 @@ RSpec.describe "tickets purchasing", :js do
   it "purchases tickets with credit card" do
     visit shopping_cart_path
     fill_in :credit_card_number, with: "4242 4242 4242 4242"
-    fill_in :expiration_month, with: "12"
-    fill_in :expiration_year, with: Time.zone.now.year + 1
+    fill_in :expiration_date, with: "12 / #{Time.zone.now + 1}"
     fill_in :cvc, with: "123"
     click_on "purchase"
     
