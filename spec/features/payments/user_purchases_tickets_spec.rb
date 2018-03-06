@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'fake_stripe'
 
-RSpec.describe "tickets purchasing", :js do
+RSpec.describe "User purchases tickets", :js do
   let(:buyer) { create(:user) }
   let(:performance) { create(:performance, event: create(:event)) }
   
@@ -25,7 +25,7 @@ RSpec.describe "tickets purchasing", :js do
     ticket_2.place_in_cart_for(buyer)
   end
   
-  it "purchases tickets with credit card" do
+  scenario "with the valid credit card" do
     visit shopping_cart_path
     fill_in :credit_card_number, with: "4242 4242 4242 4242"
     fill_in :expiration_date, with: "12 / #{Time.zone.now + 1}"

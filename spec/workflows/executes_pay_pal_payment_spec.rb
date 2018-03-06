@@ -12,10 +12,10 @@ RSpec.describe ExecutesPayPalPayment, :vcr, :aggregate_failures do
     let(:user) { instance_double(
       User, id: 5, tickets_in_cart: [ticket_1, ticket_2]) }
     let(:workflow) { ExecutesPayPalPayment.new(
-      payment_id: "PAYMENTID", token: "TOKEN", payer_id: "PAYER_ID") }
+      payment_id: "PAYMENT_ID", token: "TOKEN", payer_id: "PAYER_ID") }
     
     before(:example) do
-      allow(workflow).to receive(:find_payment).and_return(payment)
+      allow(workflow).to receive(:payment).and_return(payment)
       allow(workflow).to receive(:pay_pal_payment).and_return(pay_pal_payment)
       workflow.run
     end

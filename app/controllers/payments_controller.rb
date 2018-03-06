@@ -28,14 +28,16 @@ class PaymentsController < ApplicationController
   def paypal_workflow
     PurchasesCartViaPayPal.new(
       user: current_user,
-      purchase_amount_cents: params[:purchase_amount_cents])
+      purchase_amount_cents: params[:purchase_amount_cents],
+      expected_ticket_ids: params[:ticket_ids])
   end
   
   def stripe_workflow
     PurchasesCartViaStripe.new(
       user: current_user,
       stripe_token: StripeToken.new(**card_params),
-      purchase_amount_cents: params[:purchase_amount_cents])
+      purchase_amount_cents: params[:purchase_amount_cents],
+      expected_ticket_ids: params[:ticket_ids])
   end
   
   def card_params

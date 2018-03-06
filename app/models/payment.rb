@@ -9,7 +9,7 @@ class Payment < ApplicationRecord
   
   monetize :price_cents
   
-  enum status: {created: 0, succeeded: 1, pending: 2}
+  enum status: {created: 0, succeeded: 1, pending: 2, failed: 3}
   
   def create_line_items(tickets)
     tickets.each do |ticket|
@@ -20,5 +20,9 @@ class Payment < ApplicationRecord
   
   def total_cost
     tickets.map(&:price).sum
+  end
+  
+  def sorted_ticket_ids
+    tickets.map(&:id).sort
   end
 end

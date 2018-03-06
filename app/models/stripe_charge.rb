@@ -22,4 +22,21 @@ class StripeCharge
     @response = nil
     @error = e
   end
+  
+  def success?
+    response || !error
+  end
+  
+  def payment_attributes
+    success? ? success_attributes : failure_attributes
+  end
+  
+  def success_attributes
+    {status: response.status,
+     response_id: response.id, full_response: response.to_json}
+  end
+  
+  def failure_attributes
+    {status: :failed, full_response: error.to_json}
+  end
 end
