@@ -1,14 +1,16 @@
 class PurchasesCart
   
-  attr_accessor :user, :purchase_amount_cents,
-    :purchase_amount, :success, :payment, :expected_ticket_ids
+  attr_accessor :user, :purchase_amount_cents, :purchase_amount,
+    :success, :payment, :expected_ticket_ids, :payment_reference
   
-  def initialize(user: nil, purchase_amount_cents: nil, expected_ticket_ids: "")
+  def initialize(user: nil, purchase_amount_cents: nil,
+      expected_ticket_ids: "", payment_reference: nil)
     @user = user
     @purchase_amount = Money.new(purchase_amount_cents)
     @success = false
     @continue = true
     @expected_ticket_ids = expected_ticket_ids.split(" ").map(&:to_i).sort
+    @payment_reference = payment_reference || Payment.generate_reference
   end
   
   def run
@@ -18,9 +20,6 @@ class PurchasesCart
       post_purchase
       @success = @continue
     end
-  rescue ActiveRecord::ActiveRecordError => e
-    Rails.logger.error("ACTIVE RECORD ERROR IN TRANSACTION")
-    Rails.logger.error(e)
   end
   
   def pre_purchase_valid?
@@ -29,10 +28,17 @@ class PurchasesCart
   end
 
   def tickets
-    @tickets ||= @user.tickets_in_cart
+    @tickets ||= @user.tickets_in_cart.select do |ticket|
+      ticket.payment_reference == payment_reference
+    end
+  end
+  
+  def existing_payment
+    Payment.find_by(reference: payment_reference)
   end
   
   def pre_purchase
+    return true if existing_payment
     unless pre_purchase_valid?
       @continue = false
       return
@@ -47,7 +53,8 @@ class PurchasesCart
   end
   
   def create_payment
-    self.payment = Payment.create!(payment_attributes)
+    self.payment = existing_payment || Payment.new
+    payment.update!(payment_attributes)
     payment.create_line_items(tickets)
   end
   

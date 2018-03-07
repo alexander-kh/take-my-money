@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 06 Mar 2018 14:41:31 GMT
+      - Wed, 07 Mar 2018 19:58:29 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '780'
+      - '783'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_jaVxvBPveyLkZd
+      - req_1wCBA8ep9F2enx
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1C2gytG9Bw4keQMbSgKcyJ0W",
+          "id": "tok_1C38PAG9Bw4keQMbD1bcJxhV",
           "object": "token",
           "card": {
-            "id": "card_1C2gytG9Bw4keQMbq0dtH9Qo",
+            "id": "card_1C38PAG9Bw4keQMbBJkWflEX",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,20 +84,20 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "31.31.98.229",
-          "created": 1520347291,
+          "client_ip": "176.119.124.235",
+          "created": 1520452708,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Tue, 06 Mar 2018 14:41:31 GMT
+  recorded_at: Wed, 07 Mar 2018 19:58:29 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: UTF-8
-      string: amount=3000&currency=usd&source=tok_1C2gytG9Bw4keQMbSgKcyJ0W&description=&metadata[reference]=61ac3b12c30dd05ad65f
+      string: amount=3000&currency=usd&source=tok_1C38PAG9Bw4keQMbD1bcJxhV&description=&metadata[reference]=c1eee0dfb46fd45476ac
     headers:
       User-Agent:
       - Stripe/v1 RubyBindings/3.9.2
@@ -110,7 +110,7 @@ http_interactions:
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Idempotency-Key:
-      - 61ac3b12c30dd05ad65f
+      - c1eee0dfb46fd45476ac
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 06 Mar 2018 14:41:33 GMT
+      - Wed, 07 Mar 2018 19:58:30 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -143,11 +143,11 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Idempotency-Key:
-      - 61ac3b12c30dd05ad65f
+      - c1eee0dfb46fd45476ac
       Original-Request:
-      - req_fAq628MHKX3qyV
+      - req_VF1QhSSPxIaCyW
       Request-Id:
-      - req_fAq628MHKX3qyV
+      - req_VF1QhSSPxIaCyW
       Stripe-Version:
       - '2018-02-06'
     body:
@@ -159,9 +159,9 @@ http_interactions:
             "type": "card_error",
             "code": "card_declined",
             "decline_code": "generic_decline",
-            "charge": "ch_1C2gyuG9Bw4keQMb9n2N0IKy"
+            "charge": "ch_1C38PCG9Bw4keQMbDAgzblFr"
           }
         }
     http_version: 
-  recorded_at: Tue, 06 Mar 2018 14:41:33 GMT
+  recorded_at: Wed, 07 Mar 2018 19:58:30 GMT
 recorded_with: VCR 4.0.0

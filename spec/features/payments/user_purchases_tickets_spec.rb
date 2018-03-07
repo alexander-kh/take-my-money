@@ -32,8 +32,9 @@ RSpec.describe "User purchases tickets", :js do
     fill_in :cvc, with: "123"
     click_on "purchase"
     
-    expect(page).to have_selector(".purchased_ticket", count: 2)
-    expect(page).to have_selector("#purchased_ticket_#{ticket_1.id}")
-    expect(page).to have_selector("#purchased_ticket_#{ticket_2.id}")
+    expect(page).to have_content("Payment is pending, check back for updates")
+    # expect(page).to have_selector(".purchased_ticket", count: 2)
+    # expect(page).to have_selector("#purchased_ticket_#{ticket_1.id}")
+    # expect(page).to have_selector("#purchased_ticket_#{ticket_2.id}")
   end
 end

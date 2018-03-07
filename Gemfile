@@ -44,6 +44,7 @@ gem 'stripe'
 gem 'babel-transpiler'
 gem 'sprockets', github: 'rails/sprockets'
 gem 'paypal-sdk-rest'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
