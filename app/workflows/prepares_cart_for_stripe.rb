@@ -18,6 +18,10 @@ class PreparesCartForStripe < PreparesCart
     ExecutesStripePaymentJob.perform_later(payment, stripe_token.id)
   end
   
+  def on_failure
+    unpurchase_tickets
+  end
+  
   def payment_attributes
     super.merge(payment_method: "stripe")
   end

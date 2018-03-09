@@ -10,12 +10,21 @@ class ExecutesStripePayment
   def run
     Payment.transaction do
       result = charge
-      on_failure unless result
+      result ? on_success : on_failure
     end
   end
   
+  def on_success
+    PaymentMailer.notify_success(payment).deliver_later
+  end
+  
+  def on_failure
+    unpurchase_tickets
+    PaymentMailer.notify_failure(payment).deliver_later
+  end
+  
   def charge
-    return :present if payment.response_id.present?
+    raise PreExistingPaymentException if payment.response_id.present?
     @stripe_charge = StripeCharge.new(token: stripe_token, payment: payment)
     @stripe_charge.charge
     payment.update!(@stripe_charge.payment_attributes)
@@ -24,9 +33,5 @@ class ExecutesStripePayment
   
   def unpurchase_tickets
     payment.tickets.each(&:waiting!)
-  end
-  
-  def on_failure
-    unpurchase_tickets
   end
 end

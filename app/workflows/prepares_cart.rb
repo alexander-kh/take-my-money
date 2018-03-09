@@ -29,14 +29,22 @@ class PreparesCart
   
   def run
     Payment.transaction do
-      return if existing_payment
-      return unless pre_purchase_valid?
+      raise PreExistingPaymentException.new(purchase) if existing_payment
+      unless pre_purchase_valid?
+        raise ChargeSetupValidityException.new(
+          user: user,
+          expected_purchase_cents: purchase_amount.to_i,
+          expected_ticket_ids: expected_ticket_ids)
+      end
       update_tickets
       create_payment
-      success? ? on_success : on_failure
+      on_success
     end
+  rescue
+    on_failure
+    raise
   end
-      
+  
   def redirect_on_success_url
     nil
   end

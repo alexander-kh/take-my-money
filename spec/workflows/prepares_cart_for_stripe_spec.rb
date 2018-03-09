@@ -56,8 +56,7 @@ RSpec.describe PreparesCartForStripe, :vcr, :aggregate_failures do
         expected_ticket_ids: "#{ticket_1.id} #{ticket_2.id}") }
       
       it "does not trigger payment if the expected price is incorrect" do
-        workflow.run
-        
+        expect { workflow.run }.to raise_error(ChargeSetupValidityException)
         expect(workflow).not_to be_pre_purchase_valid
         expect(Ticket.find(ticket_1.id)).to be_waiting
         expect(Ticket.find(ticket_2.id)).to be_waiting
@@ -73,8 +72,7 @@ RSpec.describe PreparesCartForStripe, :vcr, :aggregate_failures do
         expected_ticket_ids: "#{ticket_1.id} #{ticket_3.id}") }
       
       it "does not trigger payment if the expected tickets are incorrect" do
-        workflow.run
-        
+        expect { workflow.run }.to raise_error(ChargeSetupValidityException)
         expect(workflow).not_to be_pre_purchase_valid
         expect(Ticket.find(ticket_1.id)).to be_waiting
         expect(Ticket.find(ticket_2.id)).to be_waiting

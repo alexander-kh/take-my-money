@@ -1,6 +1,15 @@
-class PurchasesCartJob < ApplicationJob
+class PreparesCartForStripeJob < ApplicationJob
 
   queue_as :default
+  
+  rescue_from(ChargeSetupValidityException) do |exception|
+    PaymentMailer.notify_failure(exception).deliver_later
+    Rollbar.error(exception)
+  end
+  
+  rescue_from(PreExistingPaymentException) do |exception|
+    Rollbar.error(exception)
+  end
 
   def perform(user:, purchase_amount_cents:, expected_ticket_ids:,
     payment_reference:, params:)
