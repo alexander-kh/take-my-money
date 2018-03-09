@@ -1,9 +1,9 @@
-class PurchasesCartViaStripe < PurchasesCart
+class PreparesCartForStripe < PreparesCart
   
   attr_accessor :stripe_token, :stripe_charge
   
   def initialize(user:, stripe_token:, purchase_amount_cents:,
-    expected_ticket_ids:, payment_reference: nil)
+      expected_ticket_ids:, payment_reference: nil)
     super(user: user, purchase_amount_cents: purchase_amount_cents,
       expected_ticket_ids: expected_ticket_ids,
       payment_reference: payment_reference)
@@ -14,13 +14,8 @@ class PurchasesCartViaStripe < PurchasesCart
     tickets.each(&:purchased!)
   end
   
-  def purchase
-    return unless @continue
-    return if payment.response_id.present?
-    @stripe_charge = StripeCharge.new(token: stripe_token, payment: payment)
-    @stripe_charge.charge
-    payment.update!(@stripe_charge.payment_attributes)
-    reverse_purchase if payment.failed?
+  def on_success
+    ExecutesStripePaymentJob.perform_later(payment, stripe_token.id)
   end
   
   def payment_attributes

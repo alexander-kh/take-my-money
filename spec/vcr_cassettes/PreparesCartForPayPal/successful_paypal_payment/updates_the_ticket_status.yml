@@ -15,7 +15,7 @@ http_interactions:
       Authorization:
       - Basic RUJXS2psRUxLTVlxUk5RNnNZdkZvNjRGdGFSTFJSNUJkSEVFU21oYTQ5VE06RU80MjJkbjNnUUxnRGJ1d3FUanpyRmdGdGFSTFJSNUJkSEVFU21oYTQ5VE0=
       Paypal-Request-Id:
-      - b75dfedb-b6f5-4015-bed2-46478e71eea2
+      - ba38d71b-9a68-496f-a178-6d1d0069c1d5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -26,20 +26,20 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 07 Mar 2018 19:58:13 GMT
+      - Fri, 09 Mar 2018 13:43:53 GMT
       Server:
       - Apache
       Paypal-Debug-Id:
-      - 884d29f62acc6
-      - 884d29f62acc6
+      - 700e9313911dc
+      - 700e9313911dc
       X-Paypal-Token-Service:
       - IAAS
       Http-X-Pp-Az-Locator:
       - sandbox.slc
       Set-Cookie:
       - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
-      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D1880%26app%3Dapiplatformproxyserv%26TIME%3D1430560858%26HTTP_X_PP_AZ_LOCATOR%3Dsandbox.slc;
-        Expires=Wed, 07 Mar 2018 20:28:13 GMT; domain=.paypal.com; path=/; Secure;
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D1880%26app%3Dapiplatformproxyserv%26TIME%3D2576327258%26HTTP_X_PP_AZ_LOCATOR%3Dsandbox.slc;
+        Expires=Fri, 09 Mar 2018 14:13:53 GMT; domain=.paypal.com; path=/; Secure;
         HttpOnly
       Vary:
       - Authorization
@@ -53,9 +53,9 @@ http_interactions:
       encoding: UTF-8
       string: '{"scope":"https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card
         openid https://api.paypal.com/v1/developer/.* https://api.paypal.com/v1/vault/credit-card/.*
-        https://uri.paypal.com/services/customer/partner-referrals/readwrite","nonce":"2018-03-07T19:20:32Zz46b4M7HZSdvW2_6DlIjX8ZvCfne4PcxD9ViMhmdUYw","access_token":"A21AAGJfTvfqRstH9x3gRmyzGxf4BhqbhvnAi5zeCM5ONFd0S7MUyoVWmIGk5wJ-LQbcUKkHaVIra2JO0eOVYXjoPIwh9-qNQ","token_type":"Bearer","app_id":"APP-2EJ531395M785864S","expires_in":30139}'
+        https://uri.paypal.com/services/customer/partner-referrals/readwrite","nonce":"2018-03-09T13:01:21ZHh_NHCSKd7Akr1mmo-WFWD8lGlxpz4WmAF6SomeND2w","access_token":"A21AAEqr934p1PyVTKjOcpt4Kr3Dc9roBe06IO-Brax0tAr3c2sow-Rmymw-BnUuCMNqkNu-_HYXLV75ldeyX7NiTfrb2wriw","token_type":"Bearer","app_id":"APP-2EJ531395M785864S","expires_in":29848}'
     http_version: 
-  recorded_at: Wed, 07 Mar 2018 19:58:13 GMT
+  recorded_at: Fri, 09 Mar 2018 13:43:53 GMT
 - request:
     method: post
     uri: https://api.sandbox.paypal.com/v1/payments/payment
@@ -68,14 +68,14 @@ http_interactions:
       X-Paypal-Sandbox-Email-Address:
       - Platform.sdk.seller@gmail.com
       Authorization:
-      - Bearer A21AAGJfTvfqRstH9x3gRmyzGxf4BhqbhvnAi5zeCM5ONFd0S7MUyoVWmIGk5wJ-LQbcUKkHaVIra2JO0eOVYXjoPIwh9-qNQ
+      - Bearer A21AAEqr934p1PyVTKjOcpt4Kr3Dc9roBe06IO-Brax0tAr3c2sow-Rmymw-BnUuCMNqkNu-_HYXLV75ldeyX7NiTfrb2wriw
       Content-Type:
       - application/json
       User-Agent:
       - PayPalSDK/PayPal-Ruby-SDK 1.7.2 (paypal-sdk-core 1.7.2; ruby 2.5.0p0-x86_64-darwin17;OpenSSL
         1.0.2n  7 Dec 2017)
       Paypal-Request-Id:
-      - b75dfedb-b6f5-4015-bed2-46478e71eea2
+      - ba38d71b-9a68-496f-a178-6d1d0069c1d5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -86,20 +86,20 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Wed, 07 Mar 2018 19:58:14 GMT
+      - Fri, 09 Mar 2018 13:43:54 GMT
       Server:
       - Apache
       Paypal-Debug-Id:
-      - 4ce39934b8e5
-      - 4ce39934b8e5
+      - 8aa228e7bf49a
+      - 8aa228e7bf49a
       Content-Language:
       - "*"
       Http-X-Pp-Az-Locator:
       - sandbox.slc
       Set-Cookie:
       - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
-      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D1880%26app%3Dapiplatformproxyserv%26TIME%3D1447338074%26HTTP_X_PP_AZ_LOCATOR%3Dsandbox.slc;
-        Expires=Wed, 07 Mar 2018 20:28:14 GMT; domain=.paypal.com; path=/; Secure;
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D1880%26app%3Dapiplatformproxyserv%26TIME%3D2593104474%26HTTP_X_PP_AZ_LOCATOR%3Dsandbox.slc;
+        Expires=Fri, 09 Mar 2018 14:13:55 GMT; domain=.paypal.com; path=/; Secure;
         HttpOnly
       Vary:
       - Authorization
@@ -111,9 +111,9 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"id":"PAY-94W3399437483070ELKQEIVQ","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"30.00","currency":"USD"},"item_list":{"items":[{"name":"Name
+      string: '{"id":"PAY-8DD10853P9257252FLKRI7GY","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"30.00","currency":"USD"},"item_list":{"items":[{"name":"Name
         08 Feb 14:25","sku":"2","price":"15.00","currency":"USD","quantity":1},{"name":"Name
-        08 Feb 14:25","sku":"2","price":"15.00","currency":"USD","quantity":1}]},"related_resources":[]}],"create_time":"2018-03-07T19:58:14Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-94W3399437483070ELKQEIVQ","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-83212752BB2770054","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-94W3399437483070ELKQEIVQ/execute","rel":"execute","method":"POST"}]}'
+        08 Feb 14:25","sku":"2","price":"15.00","currency":"USD","quantity":1}]},"related_resources":[]}],"create_time":"2018-03-09T13:43:54Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-8DD10853P9257252FLKRI7GY","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-0SV40325RT116433F","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-8DD10853P9257252FLKRI7GY/execute","rel":"execute","method":"POST"}]}'
     http_version: 
-  recorded_at: Wed, 07 Mar 2018 19:58:14 GMT
+  recorded_at: Fri, 09 Mar 2018 13:43:55 GMT
 recorded_with: VCR 4.0.0
