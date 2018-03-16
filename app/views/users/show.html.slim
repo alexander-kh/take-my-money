@@ -1,0 +1,16 @@
+h1 User dashboard for #{current_user.email}
+
+h2 Subscriptions
+
+- current_user.subscriptions.each do |subscription|
+  .subscription id=dom_id(subscription)
+    - if subscription.status == "pending_initial_payment" || \
+        subscription.status == "active"
+      p #{subscription.plan.nickname} ending #{subscription.end_date}
+      .btn
+        = link_to("Cancel Subscription", subscription, id: "cancel",
+          method: :delete, data: { confirm: "Are you sure?" })
+      .btn
+        = link_to("Change subscription plan",
+            edit_subscription_path(subscription),
+              id: "change_plan")

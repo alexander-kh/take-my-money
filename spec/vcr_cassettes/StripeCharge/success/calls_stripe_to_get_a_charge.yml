@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Mar 2018 13:43:50 GMT
+      - Thu, 15 Mar 2018 15:01:06 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_IXEh8yGEsoqcIH
+      - req_oMhsDPmj1RC5YR
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1C3lViG9Bw4keQMblsNuvx3b",
+          "id": "tok_1C5xZmG9Bw4keQMbJSrDAi0s",
           "object": "token",
           "card": {
-            "id": "card_1C3lViG9Bw4keQMbDVchY250",
+            "id": "card_1C5xZmG9Bw4keQMbcvxpX2bY",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,20 +84,20 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "37.203.17.15",
-          "created": 1520603030,
+          "client_ip": "31.31.107.53",
+          "created": 1521126066,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Fri, 09 Mar 2018 13:43:50 GMT
+  recorded_at: Thu, 15 Mar 2018 15:01:06 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: UTF-8
-      string: amount=3000&currency=usd&source=tok_1C3lViG9Bw4keQMblsNuvx3b&description=&metadata[reference]=2d83c2bbf14363ac1666
+      string: amount=3000&currency=usd&source=tok_1C5xZmG9Bw4keQMbJSrDAi0s&description=&metadata[reference]=be167188ef916a3a26eb
     headers:
       User-Agent:
       - Stripe/v1 RubyBindings/3.9.2
@@ -110,7 +110,7 @@ http_interactions:
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Idempotency-Key:
-      - 2d83c2bbf14363ac1666
+      - be167188ef916a3a26eb
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 09 Mar 2018 13:43:52 GMT
+      - Thu, 15 Mar 2018 15:01:10 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -143,11 +143,11 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Idempotency-Key:
-      - 2d83c2bbf14363ac1666
+      - be167188ef916a3a26eb
       Original-Request:
-      - req_poPhESOs7Xjodp
+      - req_35A82XhEbaTwKO
       Request-Id:
-      - req_poPhESOs7Xjodp
+      - req_35A82XhEbaTwKO
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -156,15 +156,15 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_1C3lVjG9Bw4keQMbsViX4U1y",
+          "id": "ch_1C5xZqG9Bw4keQMbXW5xSKGg",
           "object": "charge",
           "amount": 3000,
           "amount_refunded": 0,
           "application": null,
           "application_fee": null,
-          "balance_transaction": "txn_1C3lVkG9Bw4keQMbpFxFg9xe",
+          "balance_transaction": "txn_1C5xZqG9Bw4keQMbVNihyKbZ",
           "captured": true,
-          "created": 1520603031,
+          "created": 1521126070,
           "currency": "usd",
           "customer": null,
           "description": "",
@@ -176,7 +176,7 @@ http_interactions:
           "invoice": null,
           "livemode": false,
           "metadata": {
-            "reference": "2d83c2bbf14363ac1666"
+            "reference": "be167188ef916a3a26eb"
           },
           "on_behalf_of": null,
           "order": null,
@@ -196,12 +196,12 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_1C3lVjG9Bw4keQMbsViX4U1y/refunds"
+            "url": "/v1/charges/ch_1C5xZqG9Bw4keQMbXW5xSKGg/refunds"
           },
           "review": null,
           "shipping": null,
           "source": {
-            "id": "card_1C3lViG9Bw4keQMbDVchY250",
+            "id": "card_1C5xZmG9Bw4keQMbcvxpX2bY",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -231,5 +231,5 @@ http_interactions:
           "transfer_group": null
         }
     http_version: 
-  recorded_at: Fri, 09 Mar 2018 13:43:52 GMT
+  recorded_at: Thu, 15 Mar 2018 15:01:11 GMT
 recorded_with: VCR 4.0.0

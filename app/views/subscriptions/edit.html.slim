@@ -1,0 +1,10 @@
+h1 Select new subscription plan:
+
+= form_tag(subscription_path(@subscription), method: :patch) do
+  - Plan.all.each do |plan|
+    .form-group
+      = plan.nickname
+      = radio_button_tag(:new_plan, plan.id, false)
+
+  .form-group
+    = submit_tag("Change plan", id: "change_subscription_plan")

@@ -4,7 +4,9 @@ h3 Payment Options
   class: "credit-card-form form-horizontal", id: "payment-form") do
 
   = hidden_field_tag(:purchase_amount_cents, @cart.total_cost.cents)
-  = hidden_field_tag(:ticket_ids, @cart.tickets.map(&:id))
+  = hidden_field_tag(@cart.item_attribute, @cart.item_ids)
+  = hidden_field_tag(:purchase_type, @cart.class.name)
+  = hidden_field_tag(:stripe_token, "", id: "spec_stripe_token")
 
   .paypal
     img(src="https://www.paypal.com/en_US/i/logo/PayPal_mark_37x23.gif"
