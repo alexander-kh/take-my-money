@@ -26,4 +26,7 @@ class Subscription < ApplicationRecord
   def currently_active?
     active? && (end_date > Date.current)
   end
+  
+  def performance
+  end
 end

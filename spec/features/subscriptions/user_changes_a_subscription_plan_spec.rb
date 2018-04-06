@@ -29,7 +29,7 @@ RSpec.describe "User changes a subscription plan", :vcr do
     choose("new_plan_#{new_plan.id}")
     click_on("change_subscription_plan")
     
-    expect(current_url).to match("users")
+    expect(current_url).to match(user_path(user))
     expect(page).to have_content("Subscription plan was successfully changed")
   end
 end

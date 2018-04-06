@@ -8,13 +8,13 @@ http_interactions:
       string: email=test%40example.com
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:44 GMT
+      - Sun, 01 Apr 2018 22:40:25 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_tB4BmpYm3hfp3W
+      - req_aOsclTv7eHmNjB
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,17 +58,17 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_CUxVQqCDsTKvOX",
+          "id": "cus_CbRksjg5qryte5",
           "object": "customer",
           "account_balance": 0,
-          "created": 1521126104,
+          "created": 1522622425,
           "currency": null,
           "default_source": null,
           "delinquent": false,
           "description": null,
           "discount": null,
           "email": "test@example.com",
-          "invoice_prefix": "C6A949A",
+          "invoice_prefix": "EBA6C23",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -77,18 +77,18 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_CUxVQqCDsTKvOX/sources"
+            "url": "/v1/customers/cus_CbRksjg5qryte5/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_CUxVQqCDsTKvOX/subscriptions"
+            "url": "/v1/customers/cus_CbRksjg5qryte5/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:44 GMT
+  recorded_at: Sun, 01 Apr 2018 22:40:26 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/tokens
@@ -97,13 +97,13 @@ http_interactions:
       string: card[number]=4242424242424242&card[exp_month]=12&card[exp_year]=2019&card[cvc]=123
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -118,11 +118,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:46 GMT
+      - Sun, 01 Apr 2018 22:40:27 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '780'
+      - '779'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -138,7 +138,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_Nv1btf8bh001JP
+      - req_nmzs3MMt74REsw
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -147,10 +147,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1C5xaPG9Bw4keQMb8t1Y8O67",
+          "id": "tok_1CCEqdG9Bw4keQMbvJNyZzus",
           "object": "token",
           "card": {
-            "id": "card_1C5xaPG9Bw4keQMbJ0QAWYJb",
+            "id": "card_1CCEqcG9Bw4keQMbyZZGaMmI",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -173,29 +173,29 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "31.31.107.53",
-          "created": 1521126105,
+          "client_ip": "31.31.103.7",
+          "created": 1522622427,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:46 GMT
+  recorded_at: Sun, 01 Apr 2018 22:40:27 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/customers/cus_CUxVQqCDsTKvOX
+    uri: https://api.stripe.com/v1/customers/cus_CbRksjg5qryte5
     body:
       encoding: UTF-8
-      string: source=tok_1C5xaPG9Bw4keQMb8t1Y8O67
+      string: source=tok_1CCEqdG9Bw4keQMbvJNyZzus
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -210,7 +210,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:47 GMT
+      - Sun, 01 Apr 2018 22:40:28 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -230,7 +230,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_kX5L6jyRlbeo3U
+      - req_khP8Jm4WI6yLxk
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -239,17 +239,17 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_CUxVQqCDsTKvOX",
+          "id": "cus_CbRksjg5qryte5",
           "object": "customer",
           "account_balance": 0,
-          "created": 1521126104,
+          "created": 1522622425,
           "currency": null,
-          "default_source": "card_1C5xaPG9Bw4keQMbJ0QAWYJb",
+          "default_source": "card_1CCEqcG9Bw4keQMbyZZGaMmI",
           "delinquent": false,
           "description": null,
           "discount": null,
           "email": "test@example.com",
-          "invoice_prefix": "C6A949A",
+          "invoice_prefix": "EBA6C23",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -257,7 +257,7 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "card_1C5xaPG9Bw4keQMbJ0QAWYJb",
+                "id": "card_1CCEqcG9Bw4keQMbyZZGaMmI",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -269,7 +269,7 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_CUxVQqCDsTKvOX",
+                "customer": "cus_CbRksjg5qryte5",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 12,
@@ -284,33 +284,33 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_CUxVQqCDsTKvOX/sources"
+            "url": "/v1/customers/cus_CbRksjg5qryte5/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_CUxVQqCDsTKvOX/subscriptions"
+            "url": "/v1/customers/cus_CbRksjg5qryte5/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:47 GMT
+  recorded_at: Sun, 01 Apr 2018 22:40:28 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/customers/cus_CUxVQqCDsTKvOX/subscriptions
+    uri: https://api.stripe.com/v1/customers/cus_CbRksjg5qryte5/subscriptions
     body:
       encoding: UTF-8
       string: plan=orchestra_monthly
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -325,11 +325,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:49 GMT
+      - Sun, 01 Apr 2018 22:40:30 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1745'
+      - '2047'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -345,7 +345,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_wr2gnzazyliFOB
+      - req_FAtxvem2ztltYq
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -354,17 +354,17 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "sub_CUxV2Cacv56tUy",
+          "id": "sub_CbRkiTYmX4EimG",
           "object": "subscription",
           "application_fee_percent": null,
           "billing": "charge_automatically",
-          "billing_cycle_anchor": 1521126108,
+          "billing_cycle_anchor": 1522622429,
           "cancel_at_period_end": false,
           "canceled_at": null,
-          "created": 1521126108,
-          "current_period_end": 1523804508,
-          "current_period_start": 1521126108,
-          "customer": "cus_CUxVQqCDsTKvOX",
+          "created": 1522622429,
+          "current_period_end": 1525214429,
+          "current_period_start": 1522622429,
+          "customer": "cus_CbRksjg5qryte5",
           "days_until_due": null,
           "discount": null,
           "ended_at": null,
@@ -372,14 +372,15 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "si_CUxViiNKUOzIDq",
+                "id": "si_CbRk18pOU7cJ8y",
                 "object": "subscription_item",
-                "created": 1521126109,
+                "created": 1522622430,
                 "metadata": {},
                 "plan": {
                   "id": "orchestra_monthly",
                   "object": "plan",
                   "amount": 10000,
+                  "billing_scheme": "per_unit",
                   "created": 1521125550,
                   "currency": "usd",
                   "interval": "month",
@@ -388,15 +389,19 @@ http_interactions:
                   "metadata": {},
                   "nickname": "Orchestra Monthly",
                   "product": "prod_CUxMHgqubz1jrn",
-                  "trial_period_days": null
+                  "tiers": null,
+                  "tiers_mode": null,
+                  "transform_usage": null,
+                  "trial_period_days": null,
+                  "usage_type": "licensed"
                 },
                 "quantity": 1,
-                "subscription": "sub_CUxV2Cacv56tUy"
+                "subscription": "sub_CbRkiTYmX4EimG"
               }
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/subscription_items?subscription=sub_CUxV2Cacv56tUy"
+            "url": "/v1/subscription_items?subscription=sub_CbRkiTYmX4EimG"
           },
           "livemode": false,
           "metadata": {},
@@ -404,6 +409,7 @@ http_interactions:
             "id": "orchestra_monthly",
             "object": "plan",
             "amount": 10000,
+            "billing_scheme": "per_unit",
             "created": 1521125550,
             "currency": "usd",
             "interval": "month",
@@ -412,32 +418,36 @@ http_interactions:
             "metadata": {},
             "nickname": "Orchestra Monthly",
             "product": "prod_CUxMHgqubz1jrn",
-            "trial_period_days": null
+            "tiers": null,
+            "tiers_mode": null,
+            "transform_usage": null,
+            "trial_period_days": null,
+            "usage_type": "licensed"
           },
           "quantity": 1,
-          "start": 1521126108,
+          "start": 1522622429,
           "status": "active",
           "tax_percent": null,
           "trial_end": null,
           "trial_start": null
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:50 GMT
+  recorded_at: Sun, 01 Apr 2018 22:40:30 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/customers/cus_CUxVQqCDsTKvOX
+    uri: https://api.stripe.com/v1/customers/cus_CbRksjg5qryte5
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -452,11 +462,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:52 GMT
+      - Sun, 01 Apr 2018 22:40:31 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '3584'
+      - '3946'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -472,7 +482,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_iN5C3Y3Q2kNDvh
+      - req_0Y8Bm9wowH2mNc
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -481,17 +491,17 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_CUxVQqCDsTKvOX",
+          "id": "cus_CbRksjg5qryte5",
           "object": "customer",
           "account_balance": 0,
-          "created": 1521126104,
+          "created": 1522622425,
           "currency": "usd",
-          "default_source": "card_1C5xaPG9Bw4keQMbJ0QAWYJb",
+          "default_source": "card_1CCEqcG9Bw4keQMbyZZGaMmI",
           "delinquent": false,
           "description": null,
           "discount": null,
           "email": "test@example.com",
-          "invoice_prefix": "C6A949A",
+          "invoice_prefix": "EBA6C23",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -499,7 +509,7 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "card_1C5xaPG9Bw4keQMbJ0QAWYJb",
+                "id": "card_1CCEqcG9Bw4keQMbyZZGaMmI",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -511,7 +521,7 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_CUxVQqCDsTKvOX",
+                "customer": "cus_CbRksjg5qryte5",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 12,
@@ -526,23 +536,23 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_CUxVQqCDsTKvOX/sources"
+            "url": "/v1/customers/cus_CbRksjg5qryte5/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [
               {
-                "id": "sub_CUxV2Cacv56tUy",
+                "id": "sub_CbRkiTYmX4EimG",
                 "object": "subscription",
                 "application_fee_percent": null,
                 "billing": "charge_automatically",
-                "billing_cycle_anchor": 1521126108,
+                "billing_cycle_anchor": 1522622429,
                 "cancel_at_period_end": false,
                 "canceled_at": null,
-                "created": 1521126108,
-                "current_period_end": 1523804508,
-                "current_period_start": 1521126108,
-                "customer": "cus_CUxVQqCDsTKvOX",
+                "created": 1522622429,
+                "current_period_end": 1525214429,
+                "current_period_start": 1522622429,
+                "customer": "cus_CbRksjg5qryte5",
                 "days_until_due": null,
                 "discount": null,
                 "ended_at": null,
@@ -550,14 +560,15 @@ http_interactions:
                   "object": "list",
                   "data": [
                     {
-                      "id": "si_CUxViiNKUOzIDq",
+                      "id": "si_CbRk18pOU7cJ8y",
                       "object": "subscription_item",
-                      "created": 1521126109,
+                      "created": 1522622430,
                       "metadata": {},
                       "plan": {
                         "id": "orchestra_monthly",
                         "object": "plan",
                         "amount": 10000,
+                        "billing_scheme": "per_unit",
                         "created": 1521125550,
                         "currency": "usd",
                         "interval": "month",
@@ -566,15 +577,19 @@ http_interactions:
                         "metadata": {},
                         "nickname": "Orchestra Monthly",
                         "product": "prod_CUxMHgqubz1jrn",
-                        "trial_period_days": null
+                        "tiers": null,
+                        "tiers_mode": null,
+                        "transform_usage": null,
+                        "trial_period_days": null,
+                        "usage_type": "licensed"
                       },
                       "quantity": 1,
-                      "subscription": "sub_CUxV2Cacv56tUy"
+                      "subscription": "sub_CbRkiTYmX4EimG"
                     }
                   ],
                   "has_more": false,
                   "total_count": 1,
-                  "url": "/v1/subscription_items?subscription=sub_CUxV2Cacv56tUy"
+                  "url": "/v1/subscription_items?subscription=sub_CbRkiTYmX4EimG"
                 },
                 "livemode": false,
                 "metadata": {},
@@ -582,6 +597,7 @@ http_interactions:
                   "id": "orchestra_monthly",
                   "object": "plan",
                   "amount": 10000,
+                  "billing_scheme": "per_unit",
                   "created": 1521125550,
                   "currency": "usd",
                   "interval": "month",
@@ -590,10 +606,14 @@ http_interactions:
                   "metadata": {},
                   "nickname": "Orchestra Monthly",
                   "product": "prod_CUxMHgqubz1jrn",
-                  "trial_period_days": null
+                  "tiers": null,
+                  "tiers_mode": null,
+                  "transform_usage": null,
+                  "trial_period_days": null,
+                  "usage_type": "licensed"
                 },
                 "quantity": 1,
-                "start": 1521126108,
+                "start": 1522622429,
                 "status": "active",
                 "tax_percent": null,
                 "trial_end": null,
@@ -602,26 +622,26 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_CUxVQqCDsTKvOX/subscriptions"
+            "url": "/v1/customers/cus_CbRksjg5qryte5/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:52 GMT
+  recorded_at: Sun, 01 Apr 2018 22:40:31 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/customers/cus_CUxVQqCDsTKvOX/subscriptions/sub_CUxV2Cacv56tUy
+    uri: https://api.stripe.com/v1/customers/cus_CbRksjg5qryte5/subscriptions/sub_CbRkiTYmX4EimG
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -636,11 +656,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:54 GMT
+      - Sun, 01 Apr 2018 22:40:33 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1745'
+      - '2047'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -656,7 +676,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_nG9O5aT7XDpN2a
+      - req_FLJmPBBzATgoFD
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -665,17 +685,17 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "sub_CUxV2Cacv56tUy",
+          "id": "sub_CbRkiTYmX4EimG",
           "object": "subscription",
           "application_fee_percent": null,
           "billing": "charge_automatically",
-          "billing_cycle_anchor": 1521126108,
+          "billing_cycle_anchor": 1522622429,
           "cancel_at_period_end": false,
           "canceled_at": null,
-          "created": 1521126108,
-          "current_period_end": 1523804508,
-          "current_period_start": 1521126108,
-          "customer": "cus_CUxVQqCDsTKvOX",
+          "created": 1522622429,
+          "current_period_end": 1525214429,
+          "current_period_start": 1522622429,
+          "customer": "cus_CbRksjg5qryte5",
           "days_until_due": null,
           "discount": null,
           "ended_at": null,
@@ -683,14 +703,15 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "si_CUxViiNKUOzIDq",
+                "id": "si_CbRk18pOU7cJ8y",
                 "object": "subscription_item",
-                "created": 1521126109,
+                "created": 1522622430,
                 "metadata": {},
                 "plan": {
                   "id": "orchestra_monthly",
                   "object": "plan",
                   "amount": 10000,
+                  "billing_scheme": "per_unit",
                   "created": 1521125550,
                   "currency": "usd",
                   "interval": "month",
@@ -699,15 +720,19 @@ http_interactions:
                   "metadata": {},
                   "nickname": "Orchestra Monthly",
                   "product": "prod_CUxMHgqubz1jrn",
-                  "trial_period_days": null
+                  "tiers": null,
+                  "tiers_mode": null,
+                  "transform_usage": null,
+                  "trial_period_days": null,
+                  "usage_type": "licensed"
                 },
                 "quantity": 1,
-                "subscription": "sub_CUxV2Cacv56tUy"
+                "subscription": "sub_CbRkiTYmX4EimG"
               }
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/subscription_items?subscription=sub_CUxV2Cacv56tUy"
+            "url": "/v1/subscription_items?subscription=sub_CbRkiTYmX4EimG"
           },
           "livemode": false,
           "metadata": {},
@@ -715,6 +740,7 @@ http_interactions:
             "id": "orchestra_monthly",
             "object": "plan",
             "amount": 10000,
+            "billing_scheme": "per_unit",
             "created": 1521125550,
             "currency": "usd",
             "interval": "month",
@@ -723,32 +749,36 @@ http_interactions:
             "metadata": {},
             "nickname": "Orchestra Monthly",
             "product": "prod_CUxMHgqubz1jrn",
-            "trial_period_days": null
+            "tiers": null,
+            "tiers_mode": null,
+            "transform_usage": null,
+            "trial_period_days": null,
+            "usage_type": "licensed"
           },
           "quantity": 1,
-          "start": 1521126108,
+          "start": 1522622429,
           "status": "active",
           "tax_percent": null,
           "trial_end": null,
           "trial_start": null
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:55 GMT
+  recorded_at: Sun, 01 Apr 2018 22:40:33 GMT
 - request:
     method: delete
-    uri: https://api.stripe.com/v1/subscriptions/sub_CUxV2Cacv56tUy
+    uri: https://api.stripe.com/v1/subscriptions/sub_CbRkiTYmX4EimG
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -763,11 +793,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:57 GMT
+      - Sun, 01 Apr 2018 22:40:34 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1759'
+      - '2061'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -783,7 +813,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_a4XRjv6LPvUecT
+      - req_5N1GP5YjzrVEgU
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -792,32 +822,33 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "sub_CUxV2Cacv56tUy",
+          "id": "sub_CbRkiTYmX4EimG",
           "object": "subscription",
           "application_fee_percent": null,
           "billing": "charge_automatically",
-          "billing_cycle_anchor": 1521126108,
+          "billing_cycle_anchor": 1522622429,
           "cancel_at_period_end": false,
-          "canceled_at": 1521126117,
-          "created": 1521126108,
-          "current_period_end": 1523804508,
-          "current_period_start": 1521126108,
-          "customer": "cus_CUxVQqCDsTKvOX",
+          "canceled_at": 1522622434,
+          "created": 1522622429,
+          "current_period_end": 1525214429,
+          "current_period_start": 1522622429,
+          "customer": "cus_CbRksjg5qryte5",
           "days_until_due": null,
           "discount": null,
-          "ended_at": 1521126117,
+          "ended_at": 1522622434,
           "items": {
             "object": "list",
             "data": [
               {
-                "id": "si_CUxViiNKUOzIDq",
+                "id": "si_CbRk18pOU7cJ8y",
                 "object": "subscription_item",
-                "created": 1521126109,
+                "created": 1522622430,
                 "metadata": {},
                 "plan": {
                   "id": "orchestra_monthly",
                   "object": "plan",
                   "amount": 10000,
+                  "billing_scheme": "per_unit",
                   "created": 1521125550,
                   "currency": "usd",
                   "interval": "month",
@@ -826,15 +857,19 @@ http_interactions:
                   "metadata": {},
                   "nickname": "Orchestra Monthly",
                   "product": "prod_CUxMHgqubz1jrn",
-                  "trial_period_days": null
+                  "tiers": null,
+                  "tiers_mode": null,
+                  "transform_usage": null,
+                  "trial_period_days": null,
+                  "usage_type": "licensed"
                 },
                 "quantity": 1,
-                "subscription": "sub_CUxV2Cacv56tUy"
+                "subscription": "sub_CbRkiTYmX4EimG"
               }
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/subscription_items?subscription=sub_CUxV2Cacv56tUy"
+            "url": "/v1/subscription_items?subscription=sub_CbRkiTYmX4EimG"
           },
           "livemode": false,
           "metadata": {},
@@ -842,6 +877,7 @@ http_interactions:
             "id": "orchestra_monthly",
             "object": "plan",
             "amount": 10000,
+            "billing_scheme": "per_unit",
             "created": 1521125550,
             "currency": "usd",
             "interval": "month",
@@ -850,15 +886,19 @@ http_interactions:
             "metadata": {},
             "nickname": "Orchestra Monthly",
             "product": "prod_CUxMHgqubz1jrn",
-            "trial_period_days": null
+            "tiers": null,
+            "tiers_mode": null,
+            "transform_usage": null,
+            "trial_period_days": null,
+            "usage_type": "licensed"
           },
           "quantity": 1,
-          "start": 1521126108,
+          "start": 1522622429,
           "status": "canceled",
           "tax_percent": null,
           "trial_end": null,
           "trial_start": null
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:57 GMT
+  recorded_at: Sun, 01 Apr 2018 22:40:34 GMT
 recorded_with: VCR 4.0.0

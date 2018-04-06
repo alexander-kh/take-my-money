@@ -21,6 +21,9 @@ class PreparesCartForPayPal < PreparesCart
   def on_success
     @pay_pal_payment = PayPalPayment.new(payment: payment)
     payment.update!(response_id: pay_pal_payment.response_id)
+    tickets.each do |ticket|
+      ticket.update(payment_reference: payment.reference)
+    end
     payment.pending!
     unpurchase_tickets if payment.failed?
   end

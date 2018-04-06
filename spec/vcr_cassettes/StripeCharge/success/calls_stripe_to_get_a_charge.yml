@@ -8,13 +8,13 @@ http_interactions:
       string: card[number]=4242424242424242&card[exp_month]=12&card[exp_year]=2019&card[cvc]=123
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:06 GMT
+      - Sun, 01 Apr 2018 22:41:18 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '780'
+      - '779'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_oMhsDPmj1RC5YR
+      - req_69gFiWWq7I6e0X
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1C5xZmG9Bw4keQMbJSrDAi0s",
+          "id": "tok_1CCErSG9Bw4keQMbwuPxGNSa",
           "object": "token",
           "card": {
-            "id": "card_1C5xZmG9Bw4keQMbcvxpX2bY",
+            "id": "card_1CCErRG9Bw4keQMbh8qkKAAx",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,33 +84,33 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "31.31.107.53",
-          "created": 1521126066,
+          "client_ip": "31.31.103.7",
+          "created": 1522622478,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:06 GMT
+  recorded_at: Sun, 01 Apr 2018 22:41:18 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: UTF-8
-      string: amount=3000&currency=usd&source=tok_1C5xZmG9Bw4keQMbJSrDAi0s&description=&metadata[reference]=be167188ef916a3a26eb
+      string: amount=3000&currency=usd&source=tok_1CCErSG9Bw4keQMbwuPxGNSa&description=&metadata[reference]=1b0ae8430344f115e394
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Idempotency-Key:
-      - be167188ef916a3a26eb
+      - 1b0ae8430344f115e394
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:10 GMT
+      - Sun, 01 Apr 2018 22:41:19 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -143,11 +143,11 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Idempotency-Key:
-      - be167188ef916a3a26eb
+      - 1b0ae8430344f115e394
       Original-Request:
-      - req_35A82XhEbaTwKO
+      - req_E4lXCtiG3PPEu8
       Request-Id:
-      - req_35A82XhEbaTwKO
+      - req_E4lXCtiG3PPEu8
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -156,15 +156,15 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_1C5xZqG9Bw4keQMbXW5xSKGg",
+          "id": "ch_1CCErTG9Bw4keQMbPTT5crRw",
           "object": "charge",
           "amount": 3000,
           "amount_refunded": 0,
           "application": null,
           "application_fee": null,
-          "balance_transaction": "txn_1C5xZqG9Bw4keQMbVNihyKbZ",
+          "balance_transaction": "txn_1CCErTG9Bw4keQMbdM6zpY7J",
           "captured": true,
-          "created": 1521126070,
+          "created": 1522622479,
           "currency": "usd",
           "customer": null,
           "description": "",
@@ -176,7 +176,7 @@ http_interactions:
           "invoice": null,
           "livemode": false,
           "metadata": {
-            "reference": "be167188ef916a3a26eb"
+            "reference": "1b0ae8430344f115e394"
           },
           "on_behalf_of": null,
           "order": null,
@@ -196,12 +196,12 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_1C5xZqG9Bw4keQMbXW5xSKGg/refunds"
+            "url": "/v1/charges/ch_1CCErTG9Bw4keQMbPTT5crRw/refunds"
           },
           "review": null,
           "shipping": null,
           "source": {
-            "id": "card_1C5xZmG9Bw4keQMbcvxpX2bY",
+            "id": "card_1CCErRG9Bw4keQMbh8qkKAAx",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -231,5 +231,5 @@ http_interactions:
           "transfer_group": null
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:11 GMT
+  recorded_at: Sun, 01 Apr 2018 22:41:20 GMT
 recorded_with: VCR 4.0.0

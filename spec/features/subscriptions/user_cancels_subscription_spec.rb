@@ -25,7 +25,7 @@ RSpec.describe "User cancels subscription", :vcr do
       click_on("cancel")
     end
     
-    expect(current_url).to match("users")
+    expect(current_url).to match(user_path(user))
     expect(page).to have_content("Subscription was successfully canceled")
   end
 end

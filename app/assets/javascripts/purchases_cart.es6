@@ -1,5 +1,15 @@
 class CheckoutForm {
   
+  static cardswipe(data) {
+    new CheckoutForm().cardswipe(data)
+  }
+  
+  cardswipe(data) {
+    this.numberField().val(data.account)
+    this.expiryField().val(`${data.expMonth}/${data.expYear}`)
+    this.cvcField().focus()
+  }
+  
   format() {
     this.numberField().payment("formatCardNumber")
     this.expiryField().payment("formatCardExpiry")
@@ -60,7 +70,7 @@ class CheckoutForm {
     return this.isNumberValid() && this.isExpiryValid() && this.isCvcValid()
   }
   
-  button() { return this.form().find(".btn") }
+  button() { return this.form().find("#purchase") }
   
   disableButton() { this.button().toggleClass("disabled", true) }
   
@@ -78,6 +88,8 @@ class CheckoutForm {
   
   isPayPal() { return this.selectedPaymentType() === "paypal" }
   
+  isCreditCard() { return this.selectedPaymentType() === "credit" }
+  
   setCreditCardVisibility() {
     this.creditCardForm().toggleClass("hidden", this.isPayPal())
   }
@@ -85,7 +97,7 @@ class CheckoutForm {
   setButtonStatus() {
     this.isPayPal() ? this.enableButton() : this.buttonStatus()
   }
-  
+    
   submit() { this.form().get(0).submit() }
   
   appendHidden(name, value) {
@@ -131,8 +143,8 @@ class PaymentFormHandler {
   }
   
   initEventHandlers() {
-    this.checkoutForm.form().submit((event) => {
-      if (!this.checkoutForm.isPayPal()) {
+    this.checkoutForm.form().submit(event => {
+      if (this.checkoutForm.isCreditCard()) {
         this.handleSubmit(event)
       }
     })
@@ -159,4 +171,18 @@ class PaymentFormHandler {
   }
 }
 
-$(() => new PaymentFormHandler())
+$(() => {
+  if ($("#admin_credit_card_info").size() > 0) {
+    $.cardswipe({
+      firstLineOnly: false,
+      success: CheckoutForm.cardswipe,
+      parsers: ["visa", "amex", "mastercard", "discover", "generic"],
+      debug: false,
+    })
+  }
+  if ($(".credit-card-form").size() > 0) {
+    return new PaymentFormHandler()
+  }
+  
+  return null
+})

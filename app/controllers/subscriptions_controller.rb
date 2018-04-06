@@ -14,7 +14,7 @@ class SubscriptionsController < ApplicationController
       new_plan_id: params[:new_plan])
     workflow.run
     if workflow.success
-      redirect_to user_path,
+      redirect_to user_path(current_user),
         notice: "Subscription plan was successfully changed"
     end
   end
@@ -26,7 +26,8 @@ class SubscriptionsController < ApplicationController
       user: current_user)
     workflow.run
     if workflow.success
-      redirect_to user_path, notice: "Subscription was successfully canceled"
+      redirect_to user_path(current_user),
+        notice: "Subscription was successfully canceled"
     end
   end
 end

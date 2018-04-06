@@ -6,6 +6,7 @@ class PayPalPayment
   delegate :execute, to: :pay_pal_payment
   
   def self.find(payment_id)
+    payment = Payment.find_by(response_id: payment_id)
     result = PayPalPayment.new(payment: payment)
     result.pay_pal_payment = PayPal::SDK::REST::Payment.find(payment_id)
     result
@@ -32,18 +33,27 @@ class PayPalPayment
   end
   
   def payment_info
-    {item_list: {items: build_item_list},
+    {item_list: {items: build_item_list.append(discount)},
      amount: {total: payment.price.format(symbol: false), currency: "USD"}}
   end
   
   def build_item_list
     payment.payment_line_items.map do |payment_line_item|
-      {name: payment_line_item.name, sku: payment_line_item.event_id,
+      {name: payment_line_item.id, sku: payment_line_item.event_id,
        price: payment_line_item.price.format(symbol: false), currency: "USD",
        quantity: 1}
     end
   end
   
+  def discount
+    {name: "discount", price: discount_amount.format(symbol: false),
+     currency: "USD", quantity: 1}
+  end
+
+  def discount_amount
+    payment.price - payment.payment_line_items.map(&:price).sum
+  end
+
   def created?
     pay_pal_payment.state == "created"
   end
@@ -71,8 +81,9 @@ class PayPalPayment
   end
   
   def pay_pal_ticket_ids
-    line_item_ids = pay_pal_transaction.items.map(&:name).map(&:to_i)
-    line_item = line_item_ids.map { |id| PaymentLineItem.find(id) }
+    line_item_ids = pay_pal_transaction.item_list.items.map(&:name).map(&:to_i)
+    line_item_ids.delete(0)
+    line_items = line_item_ids.map { |id| PaymentLineItem.find(id) }
     line_items.flat_map(&:tickets).map(&:id).sort
   end
   

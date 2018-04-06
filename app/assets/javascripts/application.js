@@ -3,4 +3,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery.payment
+//= require jquery.cardswipe
 //= require_tree .

@@ -8,13 +8,13 @@ http_interactions:
       string: card[number]=4000000000000002&card[exp_month]=12&card[exp_year]=2019&card[cvc]=123
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:02:15 GMT
+      - Sun, 01 Apr 2018 22:40:06 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '780'
+      - '779'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_PvuVaUHCEx4yWD
+      - req_TOHKhXj4Zg3CH8
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1C5xatG9Bw4keQMbt5sKV6Ge",
+          "id": "tok_1CCEqIG9Bw4keQMbCM5h52tO",
           "object": "token",
           "card": {
-            "id": "card_1C5xasG9Bw4keQMbjDINPe5s",
+            "id": "card_1CCEqIG9Bw4keQMbv8p45SXr",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,33 +84,33 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "31.31.107.53",
-          "created": 1521126135,
+          "client_ip": "31.31.103.7",
+          "created": 1522622406,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:02:15 GMT
+  recorded_at: Sun, 01 Apr 2018 22:40:06 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: UTF-8
-      string: amount=2500&currency=usd&source=tok_1C5xatG9Bw4keQMbt5sKV6Ge&description=&metadata[reference]=f6524fc545839f31af9b
+      string: amount=2500&currency=usd&source=tok_1CCEqIG9Bw4keQMbCM5h52tO&description=&metadata[reference]=a3de3a6ec3ee07fdb247
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Idempotency-Key:
-      - f6524fc545839f31af9b
+      - a3de3a6ec3ee07fdb247
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:02:16 GMT
+      - Sun, 01 Apr 2018 22:40:08 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -143,11 +143,11 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Idempotency-Key:
-      - f6524fc545839f31af9b
+      - a3de3a6ec3ee07fdb247
       Original-Request:
-      - req_e2dyA3WX1EI93G
+      - req_5IhXc5ZJuCKwR7
       Request-Id:
-      - req_e2dyA3WX1EI93G
+      - req_5IhXc5ZJuCKwR7
       Stripe-Version:
       - '2018-02-06'
     body:
@@ -159,9 +159,9 @@ http_interactions:
             "type": "card_error",
             "code": "card_declined",
             "decline_code": "generic_decline",
-            "charge": "ch_1C5xauG9Bw4keQMbCezmOaZd"
+            "charge": "ch_1CCEqJG9Bw4keQMbGV6cZygp"
           }
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:02:16 GMT
+  recorded_at: Sun, 01 Apr 2018 22:40:08 GMT
 recorded_with: VCR 4.0.0

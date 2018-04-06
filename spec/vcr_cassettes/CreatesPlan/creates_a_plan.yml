@@ -5,16 +5,16 @@ http_interactions:
     uri: https://api.stripe.com/v1/plans
     body:
       encoding: UTF-8
-      string: id=basic_monthly_1521126117&product[name]=Basic+Monthly&amount=2000&currency=usd&interval=month&interval_count=1&nickname=Basic+Monthly
+      string: id=basic_monthly_1522622390&product[name]=Basic+Monthly&amount=2000&currency=usd&interval=month&interval_count=1&nickname=Basic+Monthly
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:58 GMT
+      - Sun, 01 Apr 2018 22:39:51 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '304'
+      - '430'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_iUVjzuKi0453MG
+      - req_XUNIFWAhbPAGKS
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,36 +58,41 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "basic_monthly_1521126117",
+          "id": "basic_monthly_1522622390",
           "object": "plan",
           "amount": 2000,
-          "created": 1521126118,
+          "billing_scheme": "per_unit",
+          "created": 1522622391,
           "currency": "usd",
           "interval": "month",
           "interval_count": 1,
           "livemode": false,
           "metadata": {},
           "nickname": "Basic Monthly",
-          "product": "prod_CUxVhluUThzbIi",
-          "trial_period_days": null
+          "product": "prod_CbRjZsnkux8Rnt",
+          "tiers": null,
+          "tiers_mode": null,
+          "transform_usage": null,
+          "trial_period_days": null,
+          "usage_type": "licensed"
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:01:58 GMT
+  recorded_at: Sun, 01 Apr 2018 22:39:52 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/plans/basic_monthly_1521126117
+    uri: https://api.stripe.com/v1/plans/basic_monthly_1522622390
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -102,11 +107,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:01:59 GMT
+      - Sun, 01 Apr 2018 22:39:53 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '304'
+      - '430'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -122,7 +127,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_j2CD4IxseJMbgu
+      - req_OnnHEjKfk7lZDW
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -131,19 +136,24 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "basic_monthly_1521126117",
+          "id": "basic_monthly_1522622390",
           "object": "plan",
           "amount": 2000,
-          "created": 1521126118,
+          "billing_scheme": "per_unit",
+          "created": 1522622391,
           "currency": "usd",
           "interval": "month",
           "interval_count": 1,
           "livemode": false,
           "metadata": {},
           "nickname": "Basic Monthly",
-          "product": "prod_CUxVhluUThzbIi",
-          "trial_period_days": null
+          "product": "prod_CbRjZsnkux8Rnt",
+          "tiers": null,
+          "tiers_mode": null,
+          "transform_usage": null,
+          "trial_period_days": null,
+          "usage_type": "licensed"
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:02:00 GMT
+  recorded_at: Sun, 01 Apr 2018 22:39:53 GMT
 recorded_with: VCR 4.0.0

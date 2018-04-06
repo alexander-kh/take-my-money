@@ -8,13 +8,13 @@ http_interactions:
       string: card[number]=4242424242424242&card[exp_month]=12&card[exp_year]=2019&card[cvc]=123
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.2
+      - Stripe/v1 RubyBindings/3.11.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.2","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
         MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
         09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Mar 2018 15:02:33 GMT
+      - Tue, 03 Apr 2018 15:18:01 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_0hvqj1oqAw6eZW
+      - req_angU1cEtCYBP87
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1C5xbAG9Bw4keQMbaXQRp0Rj",
+          "id": "tok_1CCqtZG9Bw4keQMbc0AdOl4A",
           "object": "token",
           "card": {
-            "id": "card_1C5xbAG9Bw4keQMbBHw0v4hD",
+            "id": "card_1CCqtZG9Bw4keQMb2I5nAGjj",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,12 +84,12 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "31.31.107.53",
-          "created": 1521126152,
+          "client_ip": "130.0.62.173",
+          "created": 1522768681,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Thu, 15 Mar 2018 15:02:33 GMT
+  recorded_at: Tue, 03 Apr 2018 15:18:02 GMT
 recorded_with: VCR 4.0.0

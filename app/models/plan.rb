@@ -13,4 +13,8 @@ class Plan < ApplicationRecord
     date ||= Date.current.to_date
     interval_count.send(interval).from_now(date)
   end
+  
+  def name
+    nickname
+  end
 end

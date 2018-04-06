@@ -2,6 +2,15 @@ h3 Payment Options
 
 = form_tag(payments_path,
   class: "credit-card-form form-horizontal", id: "payment-form") do
+  
+  .form-group
+    .col-sm-2
+      = label_tag(:discount_code, "Discount Code", class: "control-label")
+    .col-sm-2
+      input.form-control.valid-field(name="discount_code" id="discount_code")
+    .col-sm-3
+      = submit_tag("Apply Code", class: "btn btn-primary", id: "apply_code")
+    = hidden_field_tag(:active_discount_code, "")
 
   = hidden_field_tag(:purchase_amount_cents, @cart.total_cost.cents)
   = hidden_field_tag(@cart.item_attribute, @cart.item_ids)
@@ -23,6 +32,15 @@ h3 Payment Options
         class: "payment-type-radio", id: "credit_radio")
 
   .bg-danger#error-text
+  
+  - if current_user.admin?
+    #admin_credit_card_info
+      h3 Administrator info
+      .form-group
+        .col-sm-2
+          = label_tag(:user_email, "User Email", class: "control-label")
+        .col-sm-2
+          input.form-control(name="user_email" id="user_email")
 
   #credit-card-info
     h3 Credit Card Info

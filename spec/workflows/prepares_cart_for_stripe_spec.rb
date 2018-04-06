@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe PreparesCartForStripe, :vcr, :aggregate_failures do
   let(:performance) { create(:performance, event: create(:event)) }
-  let(:reference) { Payment.generate_reference } 
   let(:ticket_1) { create(
     :ticket, status: "waiting",
              price: Money.new(1500),
@@ -18,13 +17,18 @@ RSpec.describe PreparesCartForStripe, :vcr, :aggregate_failures do
              performance: performance,
              payment_reference: "reference") }
   let(:user) { create(:user) }
+  let!(:purchase_amount_cents) { 3000 }
+  let(:discount_code) { nil }
+  let(:discount_code_string) { nil }
   let(:workflow) { PreparesCartForStripe.new(
-    user: user, purchase_amount_cents: 3000, stripe_token: token,
-    expected_ticket_ids: "#{ticket_1.id} #{ticket_2.id}",
-    payment_reference: "reference") }
+    user: user, purchase_amount_cents: purchase_amount_cents,
+    stripe_token: token, expected_ticket_ids: "#{ticket_1.id} #{ticket_2.id}",
+    payment_reference: "reference",
+    discount_code_string: discount_code_string) }
   let(:attributes) {
     {user_id: user.id, price_cents: 3000, reference: a_truthy_value,
-     payment_method: "stripe", status: "created"} }
+     payment_method: "stripe", status: "created",
+     discount_code_id: nil, discount: Money.zero} }
   
   before(:example) do
     [ticket_1, ticket_2].each { |t| t.place_in_cart_for(user) }
@@ -44,6 +48,22 @@ RSpec.describe PreparesCartForStripe, :vcr, :aggregate_failures do
       expect(workflow.payment_attributes).to match(attributes)
       expect(workflow.success).to be_truthy
       expect(workflow.payment.payment_line_items.size).to eq(2)
+    end
+    
+    context "with a discount code" do
+      let!(:purchase_amount_cents) { 2250 }
+      let!(:discount_code) { create(
+        :discount_code, percentage: 25, code: discount_code_string) }
+      let(:discount_code_string) { "CODE" }
+      
+      it "creates a transaction object" do
+        workflow.run
+        
+        expect(workflow.payment).to have_attributes(
+          user_id: user.id, price_cents: 2250, discount_cents: 750,
+          reference: a_truthy_value, payment_method: "stripe")
+        expect(workflow.payment.payment_line_items.size).to eq(2)
+      end
     end
   end
   

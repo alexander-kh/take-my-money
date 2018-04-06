@@ -16,6 +16,9 @@ h1 Shopping Cart
             td.subtotal
               = humanized_money_with_symbol(@cart.subtotal_for(performance))
 
+- if @cart.discount_code
+  h4.active_code Active Discount Code: #{@cart.discount_code.code}
+
 h3 Total #{humanized_money_with_symbol(@cart.total_cost)}
 
 h2 Checkout
