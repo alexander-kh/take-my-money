@@ -52,6 +52,8 @@ gem 'active_admin_theme'
 gem 'draper'
 
 gem 'pundit'
+gem 'paper_trail'
+gem 'authy'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -78,6 +80,11 @@ group :test do
   gem 'poltergeist'
   gem 'fake_stripe'
   gem 'launchy'
+end
+
+group :development, :staging do
+  gem 'mail_interceptor'
+  gem 'email_prefixer'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

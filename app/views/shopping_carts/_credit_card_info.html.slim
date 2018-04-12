@@ -11,6 +11,18 @@ h3 Payment Options
     .col-sm-3
       = submit_tag("Apply Code", class: "btn btn-primary", id: "apply_code")
     = hidden_field_tag(:active_discount_code, "")
+    
+    - if current_user.admin?
+      .form-group
+        .col-sm-2
+          = label_tag(:purchase_amount,
+            "Purchase Amount Override ($X.XX)", class: "control-label")
+        .col-sm-2
+          input.form-control(name="purchase_amount"
+            id="purchase_amount"
+            value=humanized_money(@cart.total_cost))
+    - else
+      = hidden_field_tag(:purchase_amount_cents, @cart.total_cost.cents)
 
   = hidden_field_tag(:purchase_amount_cents, @cart.total_cost.cents)
   = hidden_field_tag(@cart.item_attribute, @cart.item_ids)
@@ -30,6 +42,16 @@ h3 Payment Options
     = radio_button_tag(:payment_type,
         :credit, true,
         class: "payment-type-radio", id: "credit_radio")
+
+  - if current_user.admin?
+    .cash
+      | Cash
+      = radio_button_tag(:payment_type, :cash, false,
+        class: "payment-type-radio", id: "cash_radio")
+    .invoice
+      | Invoice or Purchase Order
+      = radio_button_tag(:payment_type, :invoice, false,
+        class: "payment-type-radio", id: "invoice_radio")
 
   .bg-danger#error-text
   

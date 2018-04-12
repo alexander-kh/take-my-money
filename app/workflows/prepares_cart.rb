@@ -25,9 +25,17 @@ class PreparesCart
   
   delegate :total_price, to: :price_calculator
   
+  def amount_valid?
+    return true if user.admin?
+    purchase_amount == total_price
+  end
+  
+  def tickets_valid?
+    expected_ticket_ids == tickets.map(&:id).sort
+  end
+  
   def pre_purchase_valid?
-    purchase_amount == total_price &&
-      expected_ticket_ids == tickets.map(&:id).sort
+    amount_valid? && tickets_valid?
   end
 
   def tickets

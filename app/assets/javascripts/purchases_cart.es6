@@ -91,11 +91,11 @@ class CheckoutForm {
   isCreditCard() { return this.selectedPaymentType() === "credit" }
   
   setCreditCardVisibility() {
-    this.creditCardForm().toggleClass("hidden", this.isPayPal())
+    this.creditCardForm().toggleClass("hidden", !this.isCreditCard())
   }
   
   setButtonStatus() {
-    this.isPayPal() ? this.enableButton() : this.buttonStatus()
+    !this.isCreditCard() ? this.enableButton() : this.buttonStatus()
   }
     
   submit() { this.form().get(0).submit() }

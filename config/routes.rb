@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: "visitors#index"
-  devise_for :users
+  
+  resource :user_simulation, only: %i(create destroy)
+  
+  devise_for :users, controllers: {
+    sessions: "users/sessions"
+  }
+  
+  devise_scope :user do
+    post "users/sessions/verify" => "Users::SessionsController"
+    get "users/sessions/two_factor" => "Users::SessionsController"
+  end
+  
   resources :events
   resource :shopping_cart
   resource :subscription_cart

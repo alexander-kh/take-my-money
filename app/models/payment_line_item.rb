@@ -1,5 +1,7 @@
 class PaymentLineItem < ApplicationRecord
   
+  has_paper_trail
+  
   belongs_to :payment
   belongs_to :buyable, polymorphic: true
   

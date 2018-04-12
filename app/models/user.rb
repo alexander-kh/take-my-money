@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   
+  has_paper_trail ignore: %i(sign_in_count current_sign_in_at last_sign_in_at)
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
@@ -7,6 +9,8 @@ class User < ApplicationRecord
   
   has_many :tickets
   has_many :subscriptions
+  
+  attr_accessor :cellphone_number
   
   def tickets_in_cart
     tickets.waiting.all.to_a

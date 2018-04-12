@@ -22,4 +22,8 @@ class UserPolicy
   def edit?
     same_user? || user.admin?
   end
+  
+  def simulate?
+    user.admin? && !same_user?
+  end
 end

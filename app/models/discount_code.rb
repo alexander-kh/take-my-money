@@ -1,5 +1,7 @@
 class DiscountCode < ApplicationRecord
   
+  has_paper_trail
+  
   monetize :minimum_amount_cents
   monetize :maximum_discount_cents
   

@@ -1,9 +1,11 @@
 class Payment < ApplicationRecord
   
+  has_paper_trail
+  
   include HasReference
   
   belongs_to :user, optional: true
-  has_many :payment_line_items
+  has_many :payment_line_items, dependent: :destroy
   has_many :tickets, through: :payment_line_items,
                      source_type: "Ticket", source: "buyable"
   belongs_to :administrator, class_name: "User", optional: true
