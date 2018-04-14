@@ -62,4 +62,12 @@ class Payment < ApplicationRecord
   def refund?
     price.negative?
   end
+  
+  def date
+    created_at.to_date
+  end
+  
+  def full_value
+    price + discount
+  end
 end

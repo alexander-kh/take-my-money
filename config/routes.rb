@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :subscriptions
   resources :refunds
   
+  resource :daily_revenue_report
+  
   get "paypal/approved", to: "pay_pal_payments#approved"
   
   post "stripe/webhook", to: "stripe_webhook#action"
