@@ -17,6 +17,10 @@ class PaymentLineItem < ApplicationRecord
   
   monetize :price_cents
   
+  def self.tickets
+    where(buyable_type: "Ticket")
+  end
+  
   def generate_refund_payment(amount_cents:, admin:, refund_payment: nil)
     refund_payment ||= Payment.create!(
       user_id: payment.user_id, price_cents: -amount_cents,

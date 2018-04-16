@@ -2,36 +2,35 @@ class DailyRevenue
   
   include Reportable
   
-  attr_accessor :date, :payments
+  attr_accessor :date, :revenue, :discounts
   
   def self.find_collection
-    Payment.includes(payment_line_items: :buyable).all.group_by(&:date).
-      map do |date, payments|
-        DailyRevenue.new(date, payments)
+    ActiveRecord::Base.connection.select_all(
+        %{SELECT date(created_at) as date,
+        sum(price_cents) as price_cents,
+        sum(discount_cents) as discount_cents
+        FROM "payments"
+        WHERE "payments"."status" = 1
+        GROUP BY date(created_at)}).map do |data|
+      DailyRevenue.new(**data.symbolize_keys)
     end
   end
   
-  def initialize(date, payments)
+  def initialize(date:, price_cents:, discount_cents:)
     @date = date
-    @payments = payments
-  end
-  
-  def revenue
-    payments.sum(&:price)
-  end
-  
-  def discounts
-    payments.sum(&:discount)
-  end
-  
-  def tickets_sold
-    payments.flat_map(&:tickets).size
+    @revenue = price_cents.to_money
+    @discounts = discount_cents.to_money
   end
   
   columns do
     column(:date)
-    column(:tickets_sold)
     column(:revenue)
     column(:discounts)
+    column(:ticket_count)
+  end
+  
+  def ticket_count
+    PaymentLineItem.tickets.no_refund.
+      where("date(created_at) = ?", date).count
   end
 end

@@ -5,7 +5,7 @@ class PurchaseAudit
   attr_accessor :payment, :user
   
   def self.find_collection
-    Payment.includes(:user).succeeded.all.map do |payment|
+    Payment.includes(:user).succeeded.find_each.lazy.map do |payment|
       PurchaseAudit.new(payment)
     end
   end

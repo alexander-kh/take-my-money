@@ -10,7 +10,7 @@ class DailyRevenueReportsController < ApplicationController
         headers["Content-Disposition"] =
           %(attachment; filename="#{csv_filename}")
         headers["Last-Modified"] = Time.zone.now.ctime.to_s
-        self.response_body = DailyRevenue.to_csv_enumerator
+        self.response_body = DayRevenueReport.to_csv_enumerator
       end
     end
   end
