@@ -21,11 +21,14 @@ RSpec.describe PreparesCartForPayPal, :vcr, :aggregate_failures do
     let(:purchase_amount_cents) { 3000 }
     let(:discount_code) { nil }
     let(:discount_code_string) { nil }
+    let(:shopping_cart) { create(
+      :shopping_cart, user: user, discount_code: discount_code,
+                      shipping_method: :electronic) }
     let(:workflow) { PreparesCartForPayPal.new(
-      user: user, purchase_amount_cents: purchase_amount_cents,
+      user: user, purchase_amount_cents: 3100,
       expected_ticket_ids: "#{ticket_1.id} #{ticket_2.id}",
       payment_reference: "reference",
-      discount_code_string: discount_code_string) }
+      shopping_cart: shopping_cart) }
     
     before(:example) do
       [ticket_1, ticket_2].each { |t| t.place_in_cart_for(user) }
@@ -40,7 +43,9 @@ RSpec.describe PreparesCartForPayPal, :vcr, :aggregate_failures do
       expect(ticket_3).not_to be_pending
       expect(workflow.success).to be_truthy
       expect(workflow.payment).to have_attributes(
-        user_id: user.id, price_cents: 3000,
+        user_id: user.id, price_cents: 3100,
+        partials: {
+          "ticket_cents" => [1500, 1500], "processing_fee_cents" => 100},
         reference: a_truthy_value, payment_method: "paypal")
       expect(workflow.payment.payment_line_items.size).to eq(2)
       expect(workflow.redirect_on_success_url).to start_with(
@@ -50,16 +55,24 @@ RSpec.describe PreparesCartForPayPal, :vcr, :aggregate_failures do
     end
     
     context "with a discount code" do
-      let!(:purchase_amount_cents) { 2250 }
       let!(:discount_code) { create(
         :discount_code, percentage: 25, code: "CODE") }
       let!(:discount_code_string) { "CODE" }
+      let(:workflow) { PreparesCartForPayPal.new(
+        user: user, purchase_amount_cents: 2350,
+        expected_ticket_ids: "#{ticket_1.id} #{ticket_2.id}",
+        payment_reference: "reference",
+        shopping_cart: shopping_cart) }
       
       it "creates a transaction object" do
         workflow.run
         
         expect(workflow.payment).to have_attributes(
-          user_id: user.id, price_cents: 2250, discount_cents: 750,
+          user_id: user.id, price_cents: 2350,
+          partials: {
+            "ticket_cents" => [1500, 1500],
+            "processing_fee_cents" => 100,
+            "discount_cents" => -750},
           reference: a_truthy_value, payment_method: "paypal")
         expect(workflow.payment.payment_line_items.size).to eq(2)
       end

@@ -6,11 +6,6 @@ class PaymentsController < ApplicationController
   end
   
   def create
-    if params[:discount_code].present?
-      session[:new_discount_code] = params[:discount_code]
-      redirect_to shopping_cart_path
-      return
-    end
     normalize_purchase_amount
     workflow = run_workflow(params[:payment_type], params[:purchase_type])
     if workflow.success
@@ -52,7 +47,7 @@ class PaymentsController < ApplicationController
       user: pick_user,
       purchase_amount_cents: params[:purchase_amount_cents],
       expected_ticket_ids: params[:ticket_ids],
-      discount_code_string: session[:new_discount_code])
+      shopping_cart: current_cart)
     workflow.run
     workflow
   end
@@ -76,7 +71,7 @@ class PaymentsController < ApplicationController
       user: current_user,
       purchase_amount_cents: params[:purchase_amount_cents],
       expected_ticket_ids: params[:ticket_ids],
-      discount_code_string: session[:new_discount_code])
+      shopping_cart: current_cart)
     workflow.run
     workflow
   end
@@ -89,7 +84,7 @@ class PaymentsController < ApplicationController
       purchase_amount_cents: params[:purchase_amount_cents],
       expected_ticket_ids: params[:ticket_ids],
       payment_reference: @reference,
-      discount_code_string: session[:new_discount_code])
+      shopping_cart: current_cart)
   end
   
   def card_params

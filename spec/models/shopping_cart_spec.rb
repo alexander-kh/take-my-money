@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe ShoppingCart, type: :model do
-  let(:user) { instance_double(User) }
-  let(:cart) { ShoppingCart.new(user) }
+  let(:user) { build_stubbed(:user) }
+  let(:cart) { ShoppingCart.new(user: user) }
   
   let(:romeo_and_juliet) { instance_double(Event, name: "Romeo and Juliet") }
   let(:julius_ceasar) { instance_double(Event, name: "Julius Ceasar") }
@@ -45,7 +45,11 @@ RSpec.describe ShoppingCart, type: :model do
       to eq(Money.new(3000))
   end
   
+  it "calculates fee" do
+    expect(cart.processing_fee).to eq(Money.new(100))
+  end
+  
   it "calculates entire total" do
-    expect(cart.total_cost).to eq(Money.new(4500))
+    expect(cart.total_cost).to eq(Money.new(4600))
   end
 end

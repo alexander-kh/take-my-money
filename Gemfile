@@ -54,6 +54,7 @@ gem 'draper'
 gem 'pundit'
 gem 'paper_trail'
 gem 'authy'
+gem 'city-state'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

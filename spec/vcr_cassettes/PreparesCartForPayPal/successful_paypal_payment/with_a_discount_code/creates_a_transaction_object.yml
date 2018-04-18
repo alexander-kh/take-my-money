@@ -5,19 +5,19 @@ http_interactions:
     uri: https://api.sandbox.paypal.com/v1/payments/payment
     body:
       encoding: UTF-8
-      string: '{"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"22.50"},"item_list":{"items":[{"sku":"4","name":"5","quantity":"1","price":"15.00","currency":"USD"},{"sku":"4","name":"6","quantity":"1","price":"15.00","currency":"USD"},{"name":"discount","quantity":"1","price":"-7.50","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://c5c88ef5.ngrok.io/paypal/approved","cancel_url":"http://c5c88ef5.ngrok.io/paypal/rejected"}}'
+      string: '{"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"23.50"},"item_list":{"items":[{"sku":"5","name":"4","quantity":"1","price":"15.00","currency":"USD"},{"sku":"5","name":"5","quantity":"1","price":"15.00","currency":"USD"},{"name":"discount","quantity":"1","price":"-6.50","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://c5c88ef5.ngrok.io/paypal/approved","cancel_url":"http://c5c88ef5.ngrok.io/paypal/rejected"}}'
     headers:
       X-Paypal-Sandbox-Email-Address:
       - Platform.sdk.seller@gmail.com
       Authorization:
-      - Bearer A21AAHiYADzix4Bq9tRB8ZU1ll9JsPg7WUMoFIS30hp-BGNKr4rv_-0mrbfVGIPE-oRenBCtgTj7h2RXrkzuV0Ad0yaV2-4Kg
+      - Bearer A21AAHX4NrQtOD7MdUtWdVUW0sqxg7cuyY8c4X1Y2BfRbC4-lKzrcevjY3XaUMuKWIvB1-H7NfcT_fgNszQDSQJ1SDWlEf_Yw
       Content-Type:
       - application/json
       User-Agent:
       - PayPalSDK/PayPal-Ruby-SDK 1.7.2 (paypal-sdk-core 1.7.2; ruby 2.5.0p0-x86_64-darwin17;OpenSSL
         1.0.2n  7 Dec 2017)
       Paypal-Request-Id:
-      - 41c26cc0-d5f4-4d9a-b897-d443f5e67c41
+      - fd4445f2-3205-4b4d-b976-36414b9185e2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -28,20 +28,20 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Tue, 03 Apr 2018 15:17:56 GMT
+      - Tue, 17 Apr 2018 12:19:11 GMT
       Server:
       - Apache
       Paypal-Debug-Id:
-      - c8e917338c35b
-      - c8e917338c35b
+      - 5102c1915b314
+      - 5102c1915b314
       Content-Language:
       - "*"
       Http-X-Pp-Az-Locator:
       - sandbox.slc
       Set-Cookie:
       - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
-      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D1880%26app%3Dapiplatformproxyserv%26TIME%3D614187866%26HTTP_X_PP_AZ_LOCATOR%3Dsandbox.slc;
-        Expires=Tue, 03 Apr 2018 15:47:56 GMT; domain=.paypal.com; path=/; Secure;
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D1880%26app%3Dapiplatformproxyserv%26TIME%3D1072092506%26HTTP_X_PP_AZ_LOCATOR%3Dsandbox.slc;
+        Expires=Tue, 17 Apr 2018 12:49:11 GMT; domain=.paypal.com; path=/; Secure;
         HttpOnly
       Vary:
       - Authorization
@@ -53,7 +53,7 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"id":"PAY-6HN91313JH7468946LLBZWJA","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"22.50","currency":"USD"},"item_list":{"items":[{"name":"5","sku":"4","price":"15.00","currency":"USD","quantity":1},{"name":"6","sku":"4","price":"15.00","currency":"USD","quantity":1},{"name":"discount","price":"-7.50","currency":"USD","quantity":1}]},"related_resources":[]}],"create_time":"2018-04-03T15:17:56Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-6HN91313JH7468946LLBZWJA","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-67D87873WB690791M","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-6HN91313JH7468946LLBZWJA/execute","rel":"execute","method":"POST"}]}'
+      string: '{"id":"PAY-3HA24761647879231LLK6MPY","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"23.50","currency":"USD"},"item_list":{"items":[{"name":"4","sku":"5","price":"15.00","currency":"USD","quantity":1},{"name":"5","sku":"5","price":"15.00","currency":"USD","quantity":1},{"name":"discount","price":"-6.50","currency":"USD","quantity":1}]},"related_resources":[]}],"create_time":"2018-04-17T12:19:11Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3HA24761647879231LLK6MPY","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-5AW22867GW4352016","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-3HA24761647879231LLK6MPY/execute","rel":"execute","method":"POST"}]}'
     http_version: 
-  recorded_at: Tue, 03 Apr 2018 15:17:57 GMT
+  recorded_at: Tue, 17 Apr 2018 12:19:11 GMT
 recorded_with: VCR 4.0.0

@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     super
   end
   
+  def current_cart
+    ShoppingCart.for(user: current_user)
+  end
+  
   def user_for_paper_trail
     simulating_admin_user || current_user
   end

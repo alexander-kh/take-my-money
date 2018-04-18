@@ -98,6 +98,8 @@ GEM
     capybara-screenshot (1.0.18)
       capybara (>= 1.0, < 3)
       launchy
+    city-state (0.0.13)
+      rubyzip (~> 1.1)
     cliver (0.3.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -298,6 +300,7 @@ GEM
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
     ruby_dep (1.5.0)
+    rubyzip (1.2.1)
     safe_yaml (1.0.4)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
@@ -382,6 +385,7 @@ DEPENDENCIES
   byebug
   capybara
   capybara-screenshot
+  city-state
   coffee-rails (~> 4.2)
   database_cleaner
   delayed_job_active_record

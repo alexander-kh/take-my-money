@@ -1,7 +1,7 @@
 class ShoppingCartsController < ApplicationController
   
   def show
-    @cart = ShoppingCart.new(current_user, session[:new_discount_code])
+    @cart = ShoppingCart.for(user: current_user)
   end
   
   def update

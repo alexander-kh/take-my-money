@@ -8,15 +8,15 @@ http_interactions:
       string: card[number]=4000000000000002&card[exp_month]=12&card[exp_year]=2019&card[cvc]=123
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.11.0
+      - Stripe/v1 RubyBindings/3.12.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
-        MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
-        09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
+      - '{"bindings_version":"3.12.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+        MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
+        22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 01 Apr 2018 22:41:15 GMT
+      - Tue, 17 Apr 2018 12:19:26 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '779'
+      - '781'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_l7iU8xvE6UsnKn
+      - req_0NDFFnnbzbbeSV
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1CCErOG9Bw4keQMbs9sy1556",
+          "id": "tok_1CHsmQG9Bw4keQMbsJcqPOuV",
           "object": "token",
           "card": {
-            "id": "card_1CCErOG9Bw4keQMbv3rnl3gt",
+            "id": "card_1CHsmQG9Bw4keQMbF19XhBYl",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,33 +84,33 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "31.31.103.7",
-          "created": 1522622474,
+          "client_ip": "212.178.18.56",
+          "created": 1523967566,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Sun, 01 Apr 2018 22:41:15 GMT
+  recorded_at: Tue, 17 Apr 2018 12:19:27 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: UTF-8
-      string: amount=3000&currency=usd&source=tok_1CCErOG9Bw4keQMbs9sy1556&description=&metadata[reference]=fea1ce165974c43cec43
+      string: amount=3000&currency=usd&source=tok_1CHsmQG9Bw4keQMbsJcqPOuV&description=&metadata[reference]=95e3a9bed825ab2ef356
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.11.0
+      - Stripe/v1 RubyBindings/3.12.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
-        MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
-        09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
+      - '{"bindings_version":"3.12.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+        MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
+        22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Idempotency-Key:
-      - fea1ce165974c43cec43
+      - 95e3a9bed825ab2ef356
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -123,11 +123,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 01 Apr 2018 22:41:16 GMT
+      - Tue, 17 Apr 2018 12:19:28 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '201'
+      - '269'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -143,11 +143,11 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Idempotency-Key:
-      - fea1ce165974c43cec43
+      - 95e3a9bed825ab2ef356
       Original-Request:
-      - req_r850bEj0rrNdwz
+      - req_yelJ5B82Q7BCV5
       Request-Id:
-      - req_r850bEj0rrNdwz
+      - req_yelJ5B82Q7BCV5
       Stripe-Version:
       - '2018-02-06'
     body:
@@ -155,13 +155,14 @@ http_interactions:
       string: |
         {
           "error": {
-            "message": "Your card was declined.",
-            "type": "card_error",
+            "charge": "ch_1CHsmSG9Bw4keQMb2tVY171I",
             "code": "card_declined",
             "decline_code": "generic_decline",
-            "charge": "ch_1CCErQG9Bw4keQMbHqfUmWHY"
+            "doc_url": "https://stripe.com/docs/error-codes/card-declined",
+            "message": "Your card was declined.",
+            "type": "card_error"
           }
         }
     http_version: 
-  recorded_at: Sun, 01 Apr 2018 22:41:16 GMT
+  recorded_at: Tue, 17 Apr 2018 12:19:28 GMT
 recorded_with: VCR 4.0.0

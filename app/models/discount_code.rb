@@ -13,10 +13,6 @@ class DiscountCode < ApplicationRecord
     1 - percentage_float
   end
   
-  def apply_to(subtotal)
-    subtotal - discount_for(subtotal)
-  end
-  
   def discount_for(subtotal)
     return Money.zero unless applies_to_total?(subtotal)
     result = subtotal * percentage_float

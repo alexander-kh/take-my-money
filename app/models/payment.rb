@@ -11,12 +11,16 @@ class Payment < ApplicationRecord
   belongs_to :administrator, class_name: "User", optional: true
   has_many :refunds, class_name: "Payment", foreign_key: "original_payment_id"
   belongs_to :original_payment, class_name: "Payment", optional: true
+  belongs_to :billing_address, class_name: "Address", optional: true
+  belongs_to :shipping_address, class_name: "Address", optional: true
   
   monetize :price_cents
   monetize :discount_cents
   
   enum status: {created: 0, succeeded: 1, pending: 2, failed: 3,
                 refund_pending: 4, refunded: 5}
+  
+  enum shipping_method: {electronic: 0, standard: 1, overnight: 2}
   
   def create_line_items(tickets)
     tickets.each do |ticket|

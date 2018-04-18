@@ -1,18 +1,24 @@
-class ShoppingCart
+class ShoppingCart < ApplicationRecord
   
-  attr_accessor :user, :discount_code_string
+  belongs_to :user
+  belongs_to :address, optional: true
+  belongs_to :discount_code, optional: true
   
-  def initialize(user, discount_code_string = nil)
-    @user = user
-    @discount_code_string = discount_code_string
+  enum shipping_method: {electronic: 0, standard: 1, overnight: 2}
+  
+  def self.for(user:)
+    ShoppingCart.find_or_create_by(user_id: user.id)
   end
   
-  def discount_code
-    @discount_code ||= DiscountCode.find_by(code: discount_code_string)
+  def price_calculator
+    @price_calculator ||= PriceCalculator.new(
+      tickets, discount_code, shipping_method.to_s)
   end
+  
+  delegate :processing_fee, to: :price_calculator
   
   def total_cost
-    PriceCalculator.new(tickets, discount_code).total_price
+    price_calculator.total_price
   end
   
   def tickets

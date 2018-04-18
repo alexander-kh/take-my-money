@@ -18,16 +18,23 @@ RSpec.describe CashPurchasesCart, :aggregate_failures do
     let(:user) { create(:user) }
     let(:discount_code) { nil }
     let(:discount_code_string) { nil }
+    let(:shopping_cart) { create(
+      :shopping_cart, user: user, discount_code: discount_code,
+                      shipping_method: :electronic) }
     let(:workflow) { CashPurchasesCart.new(
       user: user,
       purchase_amount_cents: 3000,
       expected_ticket_ids: "1 2",
       payment_reference: "reference",
-      discount_code_string: discount_code_string) }
-    let(:attributes) { {user_id: user.id, price_cents: 3000,
-                        reference: a_truthy_value, payment_method: "cash",
-                        status: "succeeded", administrator_id: user.id,
-                        discount_code_id: nil, discount: Money.zero} }
+      shopping_cart: shopping_cart) }
+    let(:attributes) { {
+      user_id: user.id, price_cents: 3000,
+      reference: a_truthy_value, payment_method: "cash", status: "succeeded",
+      administrator_id: user.id, discount_code_id: nil,
+      partials: {
+        ticket_cents: [1500, 1500],
+        processing_fee_cents: 100},
+      shipping_address: nil, shipping_method: "electronic"} }
     
     context "with an administrative user" do
       before(:example) do
