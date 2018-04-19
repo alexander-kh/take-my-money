@@ -52,7 +52,7 @@ RSpec.describe "User purchases tickets", :js do
     end
   end
   
-  context "when adding a shipping method" do
+  context "when adding a shipping method", :vcr do
     
     it "comes back to the cart with shipping" do
       visit shopping_cart_path
@@ -66,7 +66,7 @@ RSpec.describe "User purchases tickets", :js do
       
       expect(page).to have_selector(
         ".active_shipping_method", text: "overnight")
-      expect(page).to have_selector(".total", text: "$41")
+      expect(page).to have_selector(".total", text: "$42.12")
     end
   end
 end

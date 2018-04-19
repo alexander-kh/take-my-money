@@ -9,6 +9,7 @@ class CashPurchasesCart < PreparesCart
     tickets.each do |ticket|
       ticket.update(payment_reference: payment.reference)
     end
+    NotifyTaxCloudJob.perform_later(payment)
   end
   
   def payment_attributes

@@ -30,7 +30,8 @@ RSpec.describe PreparesCartForStripe, :vcr, :aggregate_failures do
   let(:attributes) {
     {user_id: user.id, price_cents: 3100, reference: a_truthy_value,
      payment_method: "stripe", status: "created", discount_code_id: nil,
-     partials: {ticket_cents: [1500, 1500], processing_fee_cents: 100},
+     discount: Money.zero, partials: {
+       ticket_cents: [1500, 1500], processing_fee_cents: 100},
      shipping_method: "electronic", shipping_address: nil} }
   
   before(:example) do
@@ -84,7 +85,7 @@ RSpec.describe PreparesCartForStripe, :vcr, :aggregate_failures do
         user: user, discount_code: discount_code,
         shipping_method: :standard, address: address) }
       let(:workflow) { PreparesCartForStripe.new(
-        user: user, purchase_amount_cents: 3300,
+        user: user, purchase_amount_cents: 3330,
         expected_ticket_ids: "#{ticket_1.id} #{ticket_2.id}",
         payment_reference: "reference", stripe_token: token,
         shopping_cart: shopping_cart) }
@@ -93,11 +94,14 @@ RSpec.describe PreparesCartForStripe, :vcr, :aggregate_failures do
         workflow.run
         
         expect(workflow.payment).to have_attributes(
-          user_id: user.id, price_cents: 3300,
+          user_id: user.id, price_cents: 3330,
           partials: {
             "ticket_cents" => [1500, 1500],
             "processing_fee_cents" => 100,
-            "shipping_cents" => 200},
+            "shipping_cents" => 200,
+            "sales_tax" =>
+              {"ticket_cents" => 0.0, "processing_cents" => 10.0,
+               "shipping_cents" => 20.0}},
           reference: a_truthy_value, payment_method: "stripe",
           shipping_address: address, shipping_method: "standard")
       end

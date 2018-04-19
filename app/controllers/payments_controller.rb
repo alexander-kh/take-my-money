@@ -55,7 +55,7 @@ class PaymentsController < ApplicationController
   def normalize_purchase_amount
     return if params[:purchase_amount].blank?
     params[:purchase_amount_cents] =
-      (params[:purchase_amount].to_f * 100).to_i
+      params[:purchase_amount].to_f * 100
   end
   
   def stripe_subscription_workflow

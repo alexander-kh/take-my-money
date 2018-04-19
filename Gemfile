@@ -55,6 +55,7 @@ gem 'pundit'
 gem 'paper_trail'
 gem 'authy'
 gem 'city-state'
+gem 'tax_cloud'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

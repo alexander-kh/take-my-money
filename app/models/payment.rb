@@ -13,6 +13,7 @@ class Payment < ApplicationRecord
   belongs_to :original_payment, class_name: "Payment", optional: true
   belongs_to :billing_address, class_name: "Address", optional: true
   belongs_to :shipping_address, class_name: "Address", optional: true
+  belongs_to :discount_code, optional: true
   
   monetize :price_cents
   monetize :discount_cents
@@ -73,5 +74,16 @@ class Payment < ApplicationRecord
   
   def full_value
     price + discount
+  end
+  
+  def price_calculator
+    @price_calculator ||= PriceCalculator.new(
+      tickets, discount_code, shipping_method,
+      address: shipping_address, user: user,
+      tax_id: "payment_#{reference}")
+  end
+  
+  def paid_taxes
+    partials.fetch("sales_tax", {}).values.sum
   end
 end

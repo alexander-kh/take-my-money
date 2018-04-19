@@ -17,6 +17,7 @@ RSpec.describe ExecutesPayPalPayment, :vcr, :aggregate_failures do
     before(:example) do
       allow(workflow).to receive(:payment).and_return(payment)
       allow(workflow).to receive(:pay_pal_payment).and_return(pay_pal_payment)
+      expect(NotifyTaxCloudJob).to receive(:perform_later).with(payment)
       workflow.run
     end
     

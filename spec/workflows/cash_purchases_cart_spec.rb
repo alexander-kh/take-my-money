@@ -30,7 +30,7 @@ RSpec.describe CashPurchasesCart, :aggregate_failures do
     let(:attributes) { {
       user_id: user.id, price_cents: 3000,
       reference: a_truthy_value, payment_method: "cash", status: "succeeded",
-      administrator_id: user.id, discount_code_id: nil,
+      administrator_id: user.id, discount_code_id: nil, discount: Money.zero,
       partials: {
         ticket_cents: [1500, 1500],
         processing_fee_cents: 100},

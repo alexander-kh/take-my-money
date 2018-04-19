@@ -41,6 +41,7 @@ class ExecutesPayPalPayment
       payment.tickets.each(&:purchased!)
       payment.succeeded!
       self.success = true
+      NotifyTaxCloudJob.perform_later(payment)
     else
       payment.tickets.each(&:waiting!)
       payment.failed!

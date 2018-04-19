@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - "*/*"
       Date:
-      - Thu, 19 Apr 2018 21:14:15 GMT
+      - Thu, 19 Apr 2018 21:09:37 GMT
   response:
     status:
       code: 200
@@ -35,7 +35,7 @@ http_interactions:
       Access-Control-Allow-Headers:
       - Content-Type, X-Requested-With
       Date:
-      - Thu, 19 Apr 2018 21:13:57 GMT
+      - Thu, 19 Apr 2018 21:09:20 GMT
       Content-Length:
       - '67515'
     body:
@@ -905,7 +905,7 @@ http_interactions:
         \     <http:address location=\"https://api.taxcloud.net/1.0/taxcloud.asmx\"
         />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
     http_version: 
-  recorded_at: Thu, 19 Apr 2018 21:14:16 GMT
+  recorded_at: Thu, 19 Apr 2018 21:09:39 GMT
 - request:
     method: post
     uri: https://api.taxcloud.net/1.0/taxcloud.asmx
@@ -913,7 +913,7 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://taxcloud.net"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:Lookup><tns:customerID>4</tns:customerID><tns:cartID>cart_4</tns:cartID><tns:cartItems><tns:CartItem><tns:Index>0</tns:Index><tns:ItemID>Ticket</tns:ItemID><tns:TIC>91083</tns:TIC><tns:Price>30.0</tns:Price><tns:Qty>1</tns:Qty></tns:CartItem><tns:CartItem><tns:Index>1</tns:Index><tns:ItemID>Processing</tns:ItemID><tns:TIC>10010</tns:TIC><tns:Price>1.0</tns:Price><tns:Qty>1</tns:Qty></tns:CartItem><tns:CartItem><tns:Index>2</tns:Index><tns:ItemID>Shipping</tns:ItemID><tns:TIC>11000</tns:TIC><tns:Price>2.0</tns:Price><tns:Qty>1</tns:Qty></tns:CartItem></tns:cartItems><tns:origin><tns:Address1>1060
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:Lookup><tns:customerID>1001</tns:customerID><tns:cartID>1</tns:cartID><tns:cartItems><tns:CartItem><tns:Index>0</tns:Index><tns:ItemID>Ticket</tns:ItemID><tns:TIC>91083</tns:TIC><tns:Price>30.0</tns:Price><tns:Qty>1</tns:Qty></tns:CartItem><tns:CartItem><tns:Index>1</tns:Index><tns:ItemID>Processing</tns:ItemID><tns:TIC>10010</tns:TIC><tns:Price>1.0</tns:Price><tns:Qty>1</tns:Qty></tns:CartItem><tns:CartItem><tns:Index>2</tns:Index><tns:ItemID>Shipping</tns:ItemID><tns:TIC>11000</tns:TIC><tns:Price>2.0</tns:Price><tns:Qty>1</tns:Qty></tns:CartItem></tns:cartItems><tns:origin><tns:Address1>1060
         W. Addison</tns:Address1><tns:Address2 xsi:nil="true"/><tns:City>Chicago</tns:City><tns:State>IL</tns:State><tns:Zip5>60613</tns:Zip5><tns:Zip4
         xsi:nil="true"/></tns:origin><tns:destination><tns:Address1>1060 W. Addison</tns:Address1><tns:Address2></tns:Address2><tns:City>Chicago</tns:City><tns:State>IL</tns:State><tns:Zip5>60613</tns:Zip5><tns:Zip4
         xsi:nil="true"/></tns:destination><tns:apiLoginID>2C239750</tns:apiLoginID><tns:apiKey>fe601bd7-752c-441e-9976-ac5a79778899</tns:apiKey></tns:Lookup></env:Body></env:Envelope>
@@ -923,13 +923,13 @@ http_interactions:
       Accept:
       - "*/*"
       Date:
-      - Thu, 19 Apr 2018 21:14:16 GMT
+      - Thu, 19 Apr 2018 21:09:39 GMT
       Soapaction:
       - '"http://taxcloud.net/Lookup"'
       Content-Type:
       - text/xml;charset=UTF-8
       Content-Length:
-      - '1382'
+      - '1380'
   response:
     status:
       code: 200
@@ -952,107 +952,15 @@ http_interactions:
       Access-Control-Allow-Headers:
       - Content-Type, X-Requested-With
       Date:
-      - Thu, 19 Apr 2018 21:13:59 GMT
+      - Thu, 19 Apr 2018 21:09:22 GMT
       Content-Length:
-      - '724'
+      - '719'
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><LookupResponse
         xmlns="http://taxcloud.net"><LookupResult><ResponseType>OK</ResponseType><Messages
-        /><CartID>cart_4</CartID><CartItemsResponse><CartItemResponse><CartItemIndex>0</CartItemIndex><TaxAmount>0</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>1</CartItemIndex><TaxAmount>0.1</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>2</CartItemIndex><TaxAmount>0.2</TaxAmount></CartItemResponse></CartItemsResponse></LookupResult></LookupResponse></soap:Body></soap:Envelope>
+        /><CartID>1</CartID><CartItemsResponse><CartItemResponse><CartItemIndex>0</CartItemIndex><TaxAmount>0</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>1</CartItemIndex><TaxAmount>0.1</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>2</CartItemIndex><TaxAmount>0.2</TaxAmount></CartItemResponse></CartItemsResponse></LookupResult></LookupResponse></soap:Body></soap:Envelope>
     http_version: 
-  recorded_at: Thu, 19 Apr 2018 21:14:17 GMT
-- request:
-    method: post
-    uri: https://api.stripe.com/v1/tokens
-    body:
-      encoding: UTF-8
-      string: card[number]=4242424242424242&card[exp_month]=12&card[exp_year]=2019&card[cvc]=123
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.12.0
-      Authorization:
-      - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.12.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
-        MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
-        22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Thu, 19 Apr 2018 21:14:18 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '781'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Expose-Headers:
-      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_4hIotKUvLvRHrV
-      Stripe-Version:
-      - '2018-02-06'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "id": "tok_1CIk58G9Bw4keQMbxuZ5bUeH",
-          "object": "token",
-          "card": {
-            "id": "card_1CIk58G9Bw4keQMb2UVEcVvV",
-            "object": "card",
-            "address_city": null,
-            "address_country": null,
-            "address_line1": null,
-            "address_line1_check": null,
-            "address_line2": null,
-            "address_state": null,
-            "address_zip": null,
-            "address_zip_check": null,
-            "brand": "Visa",
-            "country": "US",
-            "cvc_check": "unchecked",
-            "dynamic_last4": null,
-            "exp_month": 12,
-            "exp_year": 2019,
-            "fingerprint": "GX3g3BXI6WxEKoWQ",
-            "funding": "credit",
-            "last4": "4242",
-            "metadata": {},
-            "name": null,
-            "tokenization_method": null
-          },
-          "client_ip": "176.119.73.85",
-          "created": 1524172458,
-          "livemode": false,
-          "type": "card",
-          "used": false
-        }
-    http_version: 
-  recorded_at: Thu, 19 Apr 2018 21:14:18 GMT
+  recorded_at: Thu, 19 Apr 2018 21:09:39 GMT
 recorded_with: VCR 4.0.0

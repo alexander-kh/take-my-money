@@ -8,15 +8,15 @@ http_interactions:
       string: card[number]=4242424242424242&card[exp_month]=12&card[exp_year]=2019&card[cvc]=123
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.11.0
+      - Stripe/v1 RubyBindings/3.12.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
-        MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
-        09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
+      - '{"bindings_version":"3.12.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+        MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
+        22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 01 Apr 2018 22:40:36 GMT
+      - Thu, 19 Apr 2018 18:47:38 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '779'
+      - '781'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_cxKCRgYm0G3WTB
+      - req_luIuoDxjPh0s2F
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1CCEqmG9Bw4keQMb0PnhApQV",
+          "id": "tok_1CIhnCG9Bw4keQMbF3jw9juI",
           "object": "token",
           "card": {
-            "id": "card_1CCEqmG9Bw4keQMbgNqD9DSe",
+            "id": "card_1CIhnCG9Bw4keQMbTn7Z24cz",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,33 +84,33 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "31.31.103.7",
-          "created": 1522622436,
+          "client_ip": "176.119.73.85",
+          "created": 1524163658,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Sun, 01 Apr 2018 22:40:36 GMT
+  recorded_at: Thu, 19 Apr 2018 18:47:38 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: UTF-8
-      string: amount=2500&currency=usd&source=tok_1CCEqmG9Bw4keQMb0PnhApQV&description=&metadata[reference]=5219f5a9356cf315859b
+      string: amount=2500&currency=usd&source=tok_1CIhnCG9Bw4keQMbF3jw9juI&description=&metadata[reference]=f5ea7fe5594c70246aad
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.11.0
+      - Stripe/v1 RubyBindings/3.12.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
-        MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
-        09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
+      - '{"bindings_version":"3.12.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+        MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
+        22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Idempotency-Key:
-      - 5219f5a9356cf315859b
+      - f5ea7fe5594c70246aad
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 01 Apr 2018 22:40:38 GMT
+      - Thu, 19 Apr 2018 18:47:40 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -143,11 +143,11 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Idempotency-Key:
-      - 5219f5a9356cf315859b
+      - f5ea7fe5594c70246aad
       Original-Request:
-      - req_3GbSuqghX4CDw2
+      - req_m6gUl1vwWbyRYO
       Request-Id:
-      - req_3GbSuqghX4CDw2
+      - req_m6gUl1vwWbyRYO
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -156,15 +156,15 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_1CCEqnG9Bw4keQMbUASL3PCY",
+          "id": "ch_1CIhnDG9Bw4keQMbpk9puisn",
           "object": "charge",
           "amount": 2500,
           "amount_refunded": 0,
           "application": null,
           "application_fee": null,
-          "balance_transaction": "txn_1CCEqoG9Bw4keQMbszutHaXP",
+          "balance_transaction": "txn_1CIhnEG9Bw4keQMbq7w3hT7j",
           "captured": true,
-          "created": 1522622437,
+          "created": 1524163659,
           "currency": "usd",
           "customer": null,
           "description": "",
@@ -176,7 +176,7 @@ http_interactions:
           "invoice": null,
           "livemode": false,
           "metadata": {
-            "reference": "5219f5a9356cf315859b"
+            "reference": "f5ea7fe5594c70246aad"
           },
           "on_behalf_of": null,
           "order": null,
@@ -196,12 +196,12 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_1CCEqnG9Bw4keQMbUASL3PCY/refunds"
+            "url": "/v1/charges/ch_1CIhnDG9Bw4keQMbpk9puisn/refunds"
           },
           "review": null,
           "shipping": null,
           "source": {
-            "id": "card_1CCEqmG9Bw4keQMbgNqD9DSe",
+            "id": "card_1CIhnCG9Bw4keQMbTn7Z24cz",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -231,26 +231,26 @@ http_interactions:
           "transfer_group": null
         }
     http_version: 
-  recorded_at: Sun, 01 Apr 2018 22:40:38 GMT
+  recorded_at: Thu, 19 Apr 2018 18:47:40 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/refunds
     body:
       encoding: UTF-8
-      string: charge=ch_1CCEqnG9Bw4keQMbUASL3PCY&amount=2500&metadata[refund_reference]=9c6efe2002a2d0a4cf00&metadata[original_reference]=5219f5a9356cf315859b
+      string: charge=ch_1CIhnDG9Bw4keQMbpk9puisn&amount=2500&metadata[refund_reference]=4eb5697de0119321b904&metadata[original_reference]=f5ea7fe5594c70246aad
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.11.0
+      - Stripe/v1 RubyBindings/3.12.0
       Authorization:
       - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.11.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
-        MacBook-Pro-Alexander.local 17.4.0 Darwin Kernel Version 17.4.0: Sun Dec 17
-        09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
+      - '{"bindings_version":"3.12.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+        MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
+        22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Idempotency-Key:
-      - 9c6efe2002a2d0a4cf00
+      - 4eb5697de0119321b904
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -263,7 +263,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 01 Apr 2018 22:40:40 GMT
+      - Thu, 19 Apr 2018 18:47:41 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -283,11 +283,11 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Idempotency-Key:
-      - 9c6efe2002a2d0a4cf00
+      - 4eb5697de0119321b904
       Original-Request:
-      - req_ruFHZwyXi8hHHh
+      - req_mYtCKM15RyOUVX
       Request-Id:
-      - req_ruFHZwyXi8hHHh
+      - req_mYtCKM15RyOUVX
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -296,21 +296,21 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "re_1CCEqpG9Bw4keQMbt7HICX9W",
+          "id": "re_1CIhnFG9Bw4keQMbyPr4CKEc",
           "object": "refund",
           "amount": 2500,
-          "balance_transaction": "txn_1CCEqpG9Bw4keQMbkOApyazn",
-          "charge": "ch_1CCEqnG9Bw4keQMbUASL3PCY",
-          "created": 1522622439,
+          "balance_transaction": "txn_1CIhnFG9Bw4keQMbfPvvQvE5",
+          "charge": "ch_1CIhnDG9Bw4keQMbpk9puisn",
+          "created": 1524163661,
           "currency": "usd",
           "metadata": {
-            "refund_reference": "9c6efe2002a2d0a4cf00",
-            "original_reference": "5219f5a9356cf315859b"
+            "refund_reference": "4eb5697de0119321b904",
+            "original_reference": "f5ea7fe5594c70246aad"
           },
           "reason": null,
           "receipt_number": null,
           "status": "succeeded"
         }
     http_version: 
-  recorded_at: Sun, 01 Apr 2018 22:40:40 GMT
+  recorded_at: Thu, 19 Apr 2018 18:47:41 GMT
 recorded_with: VCR 4.0.0

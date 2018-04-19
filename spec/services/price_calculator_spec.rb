@@ -113,4 +113,28 @@ RSpec.describe PriceCalculator, :aggregate_failures do
       expect(calculator.total_price).to eq(Money.new(3800))
     end
   end
+  
+  describe "with taxes", :vcr do
+    let(:user) { build_stubbed(:user) }
+    let(:address) { build_stubbed(:address) }
+    let(:calculator) { PriceCalculator.new(
+      [ticket_one, ticket_two], discount_code, :standard,
+      user: user, address: address, tax_id: "cart_01") }
+    let(:discount_code) { NullDiscountCode.new }
+    
+    it "calculates the price of a list of tickets" do
+      expect(discount_code.multiplier).to eq(1.0)
+      expect(discount_code.percentage_float).to eq(0)
+      expect(calculator.subtotal).to eq(Money.new(3500))
+      expect(calculator.discount).to eq(Money.new(0))
+      expect(calculator.processing_fee).to eq(Money.new(100))
+      expect(calculator.sales_tax).to eq(Money.new(30))
+      expect(calculator.breakdown).to match(
+        ticket_cents: [1500, 2000], processing_fee_cents: 100,
+        shipping_cents: 200,
+        sales_tax: {
+          ticket_cents: 0.0, processing_cents: 10.0, shipping_cents: 20.0})
+      expect(calculator.total_price).to eq(Money.new(3830))
+    end
+  end
 end

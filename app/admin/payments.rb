@@ -1,5 +1,5 @@
 ActiveAdmin.register Payment do
-  actions :all, except: [:edit]
+  actions :all, except: [:new, :edit]
   
   filter :reference
   filter :price_cents

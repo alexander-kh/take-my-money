@@ -1,5 +1,5 @@
 ActiveAdmin.register PaymentLineItem do
-  actions :all, except: [:edit]
+  actions :all, except: [:new, :edit]
   
   filter :buyable_type
   filter :price_cents
