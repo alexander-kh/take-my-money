@@ -20,5 +20,7 @@ class Ticket < ApplicationRecord
     refunded!
     new_ticket = dup
     new_ticket.unsold!
+    new_ticket.payment_reference = nil
+    new_ticket.save
   end
 end
