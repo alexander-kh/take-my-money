@@ -9,6 +9,7 @@ class User < ApplicationRecord
   
   has_many :tickets
   has_many :subscriptions
+  has_many :affiliates
   
   attr_accessor :cellphone_number
   

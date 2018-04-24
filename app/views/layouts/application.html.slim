@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width" initial-scale="1.0")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title= content_for?(:title) ? yield(:title) : "Snow Globe Theater"
     meta(name="description"
       content="#{content_for?(:description) ? yield(:description) : "Globe"}")
@@ -14,7 +14,7 @@ html(lang="en")
     javascript:
       Stripe.setPublishableKey(
         "#{Rails.application.secrets.stripe_publishable_key}");
-    
+
     = csrf_meta_tags
   
   body

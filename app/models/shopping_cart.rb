@@ -3,10 +3,12 @@ class ShoppingCart < ApplicationRecord
   belongs_to :user
   belongs_to :address, optional: true
   belongs_to :discount_code, optional: true
+  belongs_to :affiliate, optional: true
   
   enum shipping_method: {electronic: 0, standard: 1, overnight: 2}
   
   def self.for(user:)
+    return nil unless user
     ShoppingCart.find_or_create_by(user_id: user.id)
   end
   

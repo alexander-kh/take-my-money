@@ -1,0 +1,313 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/accounts
+    body:
+      encoding: UTF-8
+      string: country=US&type=custom
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/3.12.0
+      Authorization:
+      - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"3.12.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+        MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
+        22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Apr 2018 12:11:17 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2264'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_ZLL2TngptTFwSI
+      Stripe-Version:
+      - '2018-02-06'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "acct_1CK3VoIEM5CXt0Jo",
+          "object": "account",
+          "business_name": null,
+          "business_url": null,
+          "charges_enabled": true,
+          "country": "US",
+          "created": 1524485476,
+          "debit_negative_balances": false,
+          "decline_charge_on": {
+            "avs_failure": false,
+            "cvc_failure": false
+          },
+          "default_currency": "usd",
+          "details_submitted": false,
+          "display_name": null,
+          "email": null,
+          "external_accounts": {
+            "object": "list",
+            "data": [],
+            "has_more": false,
+            "total_count": 0,
+            "url": "/v1/accounts/acct_1CK3VoIEM5CXt0Jo/external_accounts"
+          },
+          "keys": {
+            "secret": "sk_test_l42cl5LbKgSch5ozIye8sb0O",
+            "publishable": "pk_test_yO3OfQMSGJoYo0B8fDdVekap"
+          },
+          "legal_entity": {
+            "additional_owners": [],
+            "address": {
+              "city": null,
+              "country": "US",
+              "line1": null,
+              "line2": null,
+              "postal_code": null,
+              "state": null
+            },
+            "business_name": null,
+            "business_tax_id_provided": false,
+            "dob": {
+              "day": null,
+              "month": null,
+              "year": null
+            },
+            "first_name": null,
+            "last_name": null,
+            "personal_address": {
+              "city": null,
+              "country": "US",
+              "line1": null,
+              "line2": null,
+              "postal_code": null,
+              "state": null
+            },
+            "personal_id_number_provided": false,
+            "ssn_last_4_provided": false,
+            "type": null,
+            "verification": {
+              "details": null,
+              "details_code": null,
+              "document": null,
+              "status": "pending"
+            }
+          },
+          "metadata": {},
+          "payout_schedule": {
+            "delay_days": 2,
+            "interval": "daily"
+          },
+          "payout_statement_descriptor": null,
+          "payouts_enabled": false,
+          "product_description": null,
+          "statement_descriptor": "",
+          "support_email": null,
+          "support_phone": null,
+          "timezone": "Etc/UTC",
+          "tos_acceptance": {
+            "date": null,
+            "ip": null,
+            "user_agent": null
+          },
+          "type": "custom",
+          "verification": {
+            "disabled_reason": "fields_needed",
+            "due_by": null,
+            "fields_needed": [
+              "external_account",
+              "legal_entity.dob.day",
+              "legal_entity.dob.month",
+              "legal_entity.dob.year",
+              "legal_entity.first_name",
+              "legal_entity.last_name",
+              "legal_entity.type",
+              "tos_acceptance.date",
+              "tos_acceptance.ip"
+            ]
+          }
+        }
+    http_version: 
+  recorded_at: Mon, 23 Apr 2018 12:11:17 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/accounts/acct_1CK3VoIEM5CXt0Jo
+    body:
+      encoding: UTF-8
+      string: legal_entity[dob][day]=27&legal_entity[dob][month]=10&legal_entity[dob][year]=1985&legal_entity[first_name]=Alexander
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/3.12.0
+      Authorization:
+      - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"3.12.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+        MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
+        22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Apr 2018 12:11:20 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2020'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_PXuMQgxUpR0ExH
+      Stripe-Account:
+      - acct_1CK3VoIEM5CXt0Jo
+      Stripe-Version:
+      - '2018-02-06'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "acct_1CK3VoIEM5CXt0Jo",
+          "object": "account",
+          "business_name": null,
+          "business_url": null,
+          "charges_enabled": true,
+          "country": "US",
+          "created": 1524485476,
+          "debit_negative_balances": false,
+          "decline_charge_on": {
+            "avs_failure": false,
+            "cvc_failure": false
+          },
+          "default_currency": "usd",
+          "details_submitted": false,
+          "display_name": null,
+          "email": null,
+          "external_accounts": {
+            "object": "list",
+            "data": [],
+            "has_more": false,
+            "total_count": 0,
+            "url": "/v1/accounts/acct_1CK3VoIEM5CXt0Jo/external_accounts"
+          },
+          "legal_entity": {
+            "additional_owners": [],
+            "address": {
+              "city": null,
+              "country": "US",
+              "line1": null,
+              "line2": null,
+              "postal_code": null,
+              "state": null
+            },
+            "business_name": null,
+            "business_tax_id_provided": false,
+            "dob": {
+              "day": 27,
+              "month": 10,
+              "year": 1985
+            },
+            "first_name": "Alexander",
+            "last_name": null,
+            "personal_address": {
+              "city": null,
+              "country": "US",
+              "line1": null,
+              "line2": null,
+              "postal_code": null,
+              "state": null
+            },
+            "personal_id_number_provided": false,
+            "ssn_last_4_provided": false,
+            "type": null,
+            "verification": {
+              "details": null,
+              "details_code": null,
+              "document": null,
+              "status": "pending"
+            }
+          },
+          "metadata": {},
+          "payout_schedule": {
+            "delay_days": 2,
+            "interval": "daily"
+          },
+          "payout_statement_descriptor": null,
+          "payouts_enabled": false,
+          "product_description": null,
+          "statement_descriptor": "",
+          "support_email": null,
+          "support_phone": null,
+          "timezone": "Etc/UTC",
+          "tos_acceptance": {
+            "date": null,
+            "ip": null,
+            "user_agent": null
+          },
+          "type": "custom",
+          "verification": {
+            "disabled_reason": "fields_needed",
+            "due_by": null,
+            "fields_needed": [
+              "external_account",
+              "legal_entity.last_name",
+              "legal_entity.type",
+              "tos_acceptance.date",
+              "tos_acceptance.ip"
+            ]
+          }
+        }
+    http_version: 
+  recorded_at: Mon, 23 Apr 2018 12:11:20 GMT
+recorded_with: VCR 4.0.0

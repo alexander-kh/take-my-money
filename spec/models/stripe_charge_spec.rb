@@ -9,14 +9,48 @@ RSpec.describe StripeCharge, :vcr do
       credit_card_number: "4242424242424242", expiration_month: "12",
       expiration_year: Time.zone.now.year + 1, cvc: "123") }
     
-    it "calls stripe to get a charge" do
-      charge = StripeCharge.new(token: token, payment: payment)
+    context "without an affiliate fee" do
+      it "calls stripe to get a charge" do
+        charge = StripeCharge.new(token: token, payment: payment)
+        
+        charge.charge
+        
+        expect(charge.response.id).to start_with("ch_")
+        expect(charge.response.amount).to eq(3000)
+        expect(charge).to be_a_success
+      end
+    end
+    
+    context "with an affiliate fee" do
+      let(:user) { create(:user) }
+      let(:affiliate_user) { create(:user, email: "affiliate@example.com") }
+      let(:affiliate_workflow) {
+        AddsAffiliateAccount.new(user: affiliate_user) }
+      let(:affiliate) { affiliate_workflow.affiliate }
+      let(:payment) { Payment.create(
+        user_id: user.id, price_cents: 3000,
+        status: "created", reference: Payment.generate_reference,
+        payment_method: "stripe") }
       
-      charge.charge
+      before(:example) do
+        affiliate_workflow.run
+        payment.update(
+          affiliate_id: affiliate.id, affiliate_payment_cents: 125)
+      end
       
-      expect(charge.response.id).to start_with("ch_")
-      expect(charge.response.amount).to eq(3000)
-      expect(charge).to be_a_success
+      it "calls stripe to get a charge" do
+        charge = StripeCharge.new(token: token, payment: payment)
+        expect(charge.charge_parameters).to match(
+          amount: payment.price.cents, currency: "usd",
+          source: token.id, description: "",
+          destination: affiliate.stripe_id, application_fee: 2875,
+          metadata: {reference: payment.reference})
+        charge.charge
+        
+        expect(charge.response.id).to start_with("ch_")
+        expect(charge.response.amount).to eq(3000)
+        expect(charge).to be_a_success
+      end
     end
   end
   

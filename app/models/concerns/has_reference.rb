@@ -4,10 +4,10 @@ module HasReference
   
   module ClassMethods
     
-    def generate_reference
+    def generate_reference(length: 10, attribute: :reference)
       loop do
-        result = SecureRandom.hex(10)
-        return result unless exists?(reference: result)
+        result = SecureRandom.hex(length)
+        return result unless exists?(attribute => result)
       end
     end
     

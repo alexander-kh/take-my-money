@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416140942) do
+ActiveRecord::Schema.define(version: 20180422155758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,22 @@ ActiveRecord::Schema.define(version: 20180416140942) do
     t.string "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "affiliates", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.string "country"
+    t.string "stripe_id"
+    t.string "tag"
+    t.json "verification_needed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "stripe_charges_enabled", default: false
+    t.boolean "stripe_transfers_enabled", default: false
+    t.string "stripe_disabled_reason"
+    t.datetime "stripe_validation_due_by"
+    t.index ["user_id"], name: "index_affiliates_on_user_id"
   end
 
   create_table "day_revenues", force: :cascade do |t|
@@ -123,7 +139,11 @@ ActiveRecord::Schema.define(version: 20180416140942) do
     t.integer "billing_address_id"
     t.integer "shipping_address_id"
     t.integer "shipping_method", default: 0
+    t.bigint "affiliate_id"
+    t.integer "affiliate_payment_cents", default: 0, null: false
+    t.string "affiliate_payment_currency", default: "USD", null: false
     t.index ["administrator_id"], name: "index_payments_on_administrator_id"
+    t.index ["affiliate_id"], name: "index_payments_on_affiliate_id"
     t.index ["discount_code_id"], name: "index_payments_on_discount_code_id"
     t.index ["original_payment_id"], name: "index_payments_on_original_payment_id"
     t.index ["reference"], name: "index_payments_on_reference"
@@ -161,7 +181,9 @@ ActiveRecord::Schema.define(version: 20180416140942) do
     t.bigint "discount_code_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "affiliate_id"
     t.index ["address_id"], name: "index_shopping_carts_on_address_id"
+    t.index ["affiliate_id"], name: "index_shopping_carts_on_affiliate_id"
     t.index ["discount_code_id"], name: "index_shopping_carts_on_discount_code_id"
     t.index ["user_id"], name: "index_shopping_carts_on_user_id"
   end
@@ -226,7 +248,9 @@ ActiveRecord::Schema.define(version: 20180416140942) do
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  add_foreign_key "affiliates", "users"
   add_foreign_key "payment_line_items", "payments"
+  add_foreign_key "payments", "affiliates"
   add_foreign_key "payments", "users"
   add_foreign_key "performances", "events"
   add_foreign_key "shopping_carts", "addresses"

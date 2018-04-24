@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :refunds
   resources :discount_codes
   resources :addresses
+  resources :affiliates
   
   resource :daily_revenue_report
   

@@ -2,6 +2,164 @@
 http_interactions:
 - request:
     method: post
+    uri: https://api.stripe.com/v1/accounts
+    body:
+      encoding: UTF-8
+      string: country=US&type=custom
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/3.12.0
+      Authorization:
+      - Bearer sk_test_JYrSngeaB6dFnfYWEII1vZaD
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"3.12.0","lang":"ruby","lang_version":"2.5.0 p0 (2017-12-25)","platform":"x86_64-darwin17","engine":"ruby","publisher":"stripe","uname":"Darwin
+        MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
+        22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Apr 2018 12:11:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2264'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_edrMuD7BaCrBGu
+      Stripe-Version:
+      - '2018-02-06'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "acct_1CK3WCKjJesUIE9j",
+          "object": "account",
+          "business_name": null,
+          "business_url": null,
+          "charges_enabled": true,
+          "country": "US",
+          "created": 1524485500,
+          "debit_negative_balances": false,
+          "decline_charge_on": {
+            "avs_failure": false,
+            "cvc_failure": false
+          },
+          "default_currency": "usd",
+          "details_submitted": false,
+          "display_name": null,
+          "email": null,
+          "external_accounts": {
+            "object": "list",
+            "data": [],
+            "has_more": false,
+            "total_count": 0,
+            "url": "/v1/accounts/acct_1CK3WCKjJesUIE9j/external_accounts"
+          },
+          "keys": {
+            "secret": "sk_test_pi33UmwE7tOg7hGzvhedE86p",
+            "publishable": "pk_test_FYiZXugIP9tCbzTtNTwKYaiH"
+          },
+          "legal_entity": {
+            "additional_owners": [],
+            "address": {
+              "city": null,
+              "country": "US",
+              "line1": null,
+              "line2": null,
+              "postal_code": null,
+              "state": null
+            },
+            "business_name": null,
+            "business_tax_id_provided": false,
+            "dob": {
+              "day": null,
+              "month": null,
+              "year": null
+            },
+            "first_name": null,
+            "last_name": null,
+            "personal_address": {
+              "city": null,
+              "country": "US",
+              "line1": null,
+              "line2": null,
+              "postal_code": null,
+              "state": null
+            },
+            "personal_id_number_provided": false,
+            "ssn_last_4_provided": false,
+            "type": null,
+            "verification": {
+              "details": null,
+              "details_code": null,
+              "document": null,
+              "status": "pending"
+            }
+          },
+          "metadata": {},
+          "payout_schedule": {
+            "delay_days": 2,
+            "interval": "daily"
+          },
+          "payout_statement_descriptor": null,
+          "payouts_enabled": false,
+          "product_description": null,
+          "statement_descriptor": "",
+          "support_email": null,
+          "support_phone": null,
+          "timezone": "Etc/UTC",
+          "tos_acceptance": {
+            "date": null,
+            "ip": null,
+            "user_agent": null
+          },
+          "type": "custom",
+          "verification": {
+            "disabled_reason": "fields_needed",
+            "due_by": null,
+            "fields_needed": [
+              "external_account",
+              "legal_entity.dob.day",
+              "legal_entity.dob.month",
+              "legal_entity.dob.year",
+              "legal_entity.first_name",
+              "legal_entity.last_name",
+              "legal_entity.type",
+              "tos_acceptance.date",
+              "tos_acceptance.ip"
+            ]
+          }
+        }
+    http_version: 
+  recorded_at: Mon, 23 Apr 2018 12:11:41 GMT
+- request:
+    method: post
     uri: https://api.stripe.com/v1/tokens
     body:
       encoding: UTF-8
@@ -29,11 +187,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 19 Apr 2018 18:47:47 GMT
+      - Mon, 23 Apr 2018 12:11:42 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '781'
+      - '783'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +207,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_vXP4dC3G2077Ee
+      - req_tDsLeXhOKnguPw
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,10 +216,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1CIhnLG9Bw4keQMbvi470KUV",
+          "id": "tok_1CK3WEG9Bw4keQMbJQ0YgLCv",
           "object": "token",
           "card": {
-            "id": "card_1CIhnLG9Bw4keQMb5zmR4el6",
+            "id": "card_1CK3WEG9Bw4keQMbUKOckNbn",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,20 +242,20 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "176.119.73.85",
-          "created": 1524163667,
+          "client_ip": "176.119.122.236",
+          "created": 1524485502,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Thu, 19 Apr 2018 18:47:47 GMT
+  recorded_at: Mon, 23 Apr 2018 12:11:42 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: UTF-8
-      string: amount=2500&currency=usd&source=tok_1CIhnLG9Bw4keQMbvi470KUV&description=&metadata[reference]=d97f3ea11f0d7e12b9c0
+      string: amount=3000&currency=usd&source=tok_1CK3WEG9Bw4keQMbJQ0YgLCv&description=&metadata[reference]=b9c90d5862d9d623d18d
     headers:
       User-Agent:
       - Stripe/v1 RubyBindings/3.12.0
@@ -110,7 +268,7 @@ http_interactions:
         MacBook-Pro-Alexander.local 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5
         22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64","hostname":"MacBook-Pro-Alexander.local"}'
       Idempotency-Key:
-      - d97f3ea11f0d7e12b9c0
+      - b9c90d5862d9d623d18d
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -123,7 +281,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 19 Apr 2018 18:47:49 GMT
+      - Mon, 23 Apr 2018 12:11:43 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -143,11 +301,11 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Idempotency-Key:
-      - d97f3ea11f0d7e12b9c0
+      - b9c90d5862d9d623d18d
       Original-Request:
-      - req_womZbiHOrJEVVH
+      - req_GgW0cpl8yJrG0n
       Request-Id:
-      - req_womZbiHOrJEVVH
+      - req_GgW0cpl8yJrG0n
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -156,15 +314,15 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_1CIhnMG9Bw4keQMb9FgpUB7d",
+          "id": "ch_1CK3WFG9Bw4keQMb213PcJM3",
           "object": "charge",
-          "amount": 2500,
+          "amount": 3000,
           "amount_refunded": 0,
           "application": null,
           "application_fee": null,
-          "balance_transaction": "txn_1CIhnMG9Bw4keQMbrJn5LjX9",
+          "balance_transaction": "txn_1CK3WFG9Bw4keQMbY97wAjLV",
           "captured": true,
-          "created": 1524163668,
+          "created": 1524485503,
           "currency": "usd",
           "customer": null,
           "description": "",
@@ -176,7 +334,7 @@ http_interactions:
           "invoice": null,
           "livemode": false,
           "metadata": {
-            "reference": "d97f3ea11f0d7e12b9c0"
+            "reference": "b9c90d5862d9d623d18d"
           },
           "on_behalf_of": null,
           "order": null,
@@ -196,12 +354,12 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_1CIhnMG9Bw4keQMb9FgpUB7d/refunds"
+            "url": "/v1/charges/ch_1CK3WFG9Bw4keQMb213PcJM3/refunds"
           },
           "review": null,
           "shipping": null,
           "source": {
-            "id": "card_1CIhnLG9Bw4keQMb5zmR4el6",
+            "id": "card_1CK3WEG9Bw4keQMbUKOckNbn",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -231,5 +389,5 @@ http_interactions:
           "transfer_group": null
         }
     http_version: 
-  recorded_at: Thu, 19 Apr 2018 18:47:49 GMT
+  recorded_at: Mon, 23 Apr 2018 12:11:43 GMT
 recorded_with: VCR 4.0.0

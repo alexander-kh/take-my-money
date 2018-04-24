@@ -55,6 +55,21 @@ RSpec.describe PreparesCartForStripe, :vcr, :aggregate_failures do
       expect(ShoppingCart.find_by(user_id: user.id)).to be_nil
     end
     
+    context "with an affiliate" do
+      let(:affiliate) { create(:affiliate) }
+      
+      before(:example) do
+        shopping_cart.update(affiliate: affiliate)
+      end
+      
+      it "successfully handles the affiliate attributes" do
+        workflow.run
+        
+        expect(workflow.payment).to have_attributes(
+          affiliate_id: affiliate.id, affiliate_payment_cents: 150)
+      end
+    end
+    
     context "with a discount code" do
       let(:workflow) { PreparesCartForStripe.new(
         user: user, purchase_amount_cents: 2350,

@@ -62,10 +62,22 @@ class PriceCalculator
   end
   
   def total_price
-    subtotal - discount + processing_fee + shipping_fee + sales_tax
+    base_price + processing_fee + shipping_fee + sales_tax
+  end
+  
+  def base_price
+    subtotal - discount
   end
   
   def discount
     discount_code.discount_for(subtotal)
+  end
+  
+  def affiliate_payment
+    base_price * 0.05
+  end
+  
+  def affiliate_application_fee
+    total_price - affiliate_payment
   end
 end

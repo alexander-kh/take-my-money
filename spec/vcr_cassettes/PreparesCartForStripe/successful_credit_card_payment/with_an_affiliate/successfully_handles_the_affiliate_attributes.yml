@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 23 Apr 2018 21:09:36 GMT
+      - Mon, 23 Apr 2018 21:09:37 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_kF9e8YPo4ySgZC
+      - req_8DJMj5JSChCBpv
       Stripe-Version:
       - '2018-02-06'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1CKBumG9Bw4keQMbqyfIaeZz",
+          "id": "tok_1CKBunG9Bw4keQMbAMN46m3p",
           "object": "token",
           "card": {
-            "id": "card_1CKBumG9Bw4keQMbV47x4p3z",
+            "id": "card_1CKBunG9Bw4keQMbMgs44xCW",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -85,11 +85,11 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "176.119.122.236",
-          "created": 1524517776,
+          "created": 1524517777,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Mon, 23 Apr 2018 21:09:36 GMT
+  recorded_at: Mon, 23 Apr 2018 21:09:38 GMT
 recorded_with: VCR 4.0.0

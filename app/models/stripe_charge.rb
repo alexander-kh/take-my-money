@@ -23,6 +23,18 @@ class StripeCharge
     @error = e
   end
   
+  def charge_parameters
+    parameters = {
+      amount: payment.price.cents, currency: "usd",
+      source: token.id, description: "",
+      metadata: {reference: payment.reference}}
+    if payment.active_affiliate.present?
+      parameters[:destination] = payment.affiliate.stripe_id
+      parameters[:application_fee] = payment.application_fee.cents
+    end
+    parameters
+  end
+  
   def success?
     response || !error
   end
@@ -32,7 +44,7 @@ class StripeCharge
   end
   
   def success_attributes
-    {status: response.status,
+    {status: :succeeded,
      response_id: response.id, full_response: response.to_json}
   end
   

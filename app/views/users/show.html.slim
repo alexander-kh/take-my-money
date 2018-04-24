@@ -14,3 +14,14 @@ h2 Subscriptions
         = link_to("Change subscription plan",
             edit_subscription_path(subscription),
               id: "change_plan")
+
+h3 Affiliate
+
+- if current_user.affiliates.empty?
+  = link_to "Make me an affiliate", new_affiliate_path
+- else
+  h4 Affiliate Tags
+
+  ul
+    - current_user.affiliates.each do |affiliate|
+      li= link_to(affiliate.tag, root_path(tag: affiliate.tag))
